@@ -3,12 +3,12 @@
  * Run with: npx tsx lib/china-airlines-award/test-search.ts
  *
  * Requires a prior login — run test-login.ts first and ensure
- * DYNASTY_FLYER_CONTEXT_ID is set in .env.
+ * DYNASTY_FLYER_SESSION_ID is set in .env.
  *
  * Required env vars:
  *   BROWSERBASE_API_KEY
  *   BROWSERBASE_PROJECT_ID
- *   DYNASTY_FLYER_CONTEXT_ID
+ *   DYNASTY_FLYER_SESSION_ID
  */
 
 import { readFileSync } from "fs";
@@ -59,11 +59,13 @@ async function main() {
     }
   }
 
-  if (!process.env.DYNASTY_FLYER_CONTEXT_ID) {
-    console.error(
-      "Missing DYNASTY_FLYER_CONTEXT_ID. Run test-login.ts first to authenticate."
+  if (!process.env.DYNASTY_FLYER_SESSION_ID) {
+    console.warn(
+      "Warning: Missing DYNASTY_FLYER_SESSION_ID. Run test-login.ts first to authenticate."
     );
-    process.exit(1);
+    console.warn(
+      "The search will fail unless a session ID is available.\n"
+    );
   }
 
   try {

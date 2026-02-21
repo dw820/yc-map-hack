@@ -58,6 +58,27 @@ function saveContextId(contextId: string) {
   }
 }
 
+/** Write the session ID back to .env so search can reconnect */
+function saveSessionId(sessionId: string) {
+  try {
+    let envContent = readFileSync(envPath, "utf-8");
+    if (envContent.includes(`DYNASTY_FLYER_SESSION_ID=${sessionId}`)) return;
+
+    if (envContent.includes("DYNASTY_FLYER_SESSION_ID=")) {
+      envContent = envContent.replace(
+        /DYNASTY_FLYER_SESSION_ID=.*/,
+        `DYNASTY_FLYER_SESSION_ID=${sessionId}`
+      );
+    } else {
+      envContent += `\nDYNASTY_FLYER_SESSION_ID=${sessionId}\n`;
+    }
+    writeFileSync(envPath, envContent);
+    console.log(`\n[test] Saved DYNASTY_FLYER_SESSION_ID=${sessionId} to .env`);
+  } catch (e) {
+    console.warn(`[test] Could not save session ID to .env: ${e}`);
+  }
+}
+
 async function main() {
   console.log("=== Dynasty Flyer Login Test ===");
   console.log("This will open a browser session for you to log in.");
@@ -83,6 +104,9 @@ async function main() {
 
     if (result.success && result.contextId) {
       saveContextId(result.contextId);
+    }
+    if (result.success && result.sessionId) {
+      saveSessionId(result.sessionId);
     }
 
     process.exit(result.success ? 0 : 1);

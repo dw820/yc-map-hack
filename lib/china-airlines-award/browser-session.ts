@@ -26,6 +26,7 @@ export class AwardBrowserSessionManager {
   private bb: Browserbase;
   private projectId: string;
   public lastCreatedContextId: string | null = null;
+  public lastSessionId: string | null = null;
 
   private constructor() {
     const apiKey = getEnvOrThrow("BROWSERBASE_API_KEY");
@@ -38,6 +39,10 @@ export class AwardBrowserSessionManager {
       AwardBrowserSessionManager.instance = new AwardBrowserSessionManager();
     }
     return AwardBrowserSessionManager.instance;
+  }
+
+  getSessionId(): string | null {
+    return this.lastSessionId ?? process.env.DYNASTY_FLYER_SESSION_ID ?? null;
   }
 
   async getOrCreateContext(): Promise<string> {
@@ -78,11 +83,14 @@ export class AwardBrowserSessionManager {
     console.log("[award-session] Creating Browserbase session...");
     const session = await this.bb.sessions.create({
       projectId: this.projectId,
+      keepAlive: true,
+      timeout: TIMEOUTS.browserbaseSessionTimeout,
       browserSettings: {
         context: { id: contextId, persist: true },
         blockAds: true,
       },
     });
+    this.lastSessionId = session.id;
     console.log(`[award-session] Session created: ${session.id}`);
     console.log(
       `[award-session] Replay: https://browserbase.com/sessions/${session.id}`
@@ -114,16 +122,16 @@ export class AwardBrowserSessionManager {
 
     page.setDefaultTimeout(TIMEOUTS.elementInteraction);
 
-    const closeSession = async () => {
-      console.log("[award-session] Closing session...");
+    const disconnectSession = async () => {
+      console.log("[award-session] Disconnecting from session...");
       try {
-        await page.close().catch(() => {});
         await browser.close().catch(() => {});
-        await new Promise((r) => setTimeout(r, TIMEOUTS.contextSync));
+        // No page.close() — keep pages alive in Browserbase
+        // No contextSync delay — session stays alive with keepAlive
       } finally {
         this.activeSession = null;
       }
-      console.log("[award-session] Session closed.");
+      console.log("[award-session] Disconnected (session still alive in Browserbase).");
     };
 
     this.activeSession = {
@@ -132,9 +140,88 @@ export class AwardBrowserSessionManager {
       context,
       page,
       debugUrl,
-      close: closeSession,
+      close: disconnectSession,
     };
 
     return this.activeSession;
+  }
+
+  async reconnectToSession(sessionId: string): Promise<BrowserSession> {
+    if (this.activeSession) {
+      throw new AwardSearchError(
+        "SESSION_ERROR",
+        "A session is already active. Close it before reconnecting."
+      );
+    }
+
+    console.log(`[award-session] Reconnecting to session: ${sessionId}`);
+    const session = await this.bb.sessions.retrieve(sessionId);
+    if (session.status !== "RUNNING") {
+      throw new AwardSearchError(
+        "AUTH_REQUIRED",
+        `Session expired (status: ${session.status}). Please re-login.`
+      );
+    }
+
+    // Get debug URL for live viewing
+    let debugUrl = `https://browserbase.com/sessions/${sessionId}`;
+    try {
+      const debugInfo = await this.bb.sessions.debug(sessionId);
+      if (debugInfo.debuggerFullscreenUrl) {
+        debugUrl = debugInfo.debuggerFullscreenUrl;
+      }
+    } catch (e) {
+      console.warn(`[award-session] Could not get debug URL: ${e}`);
+    }
+    console.log(`[award-session] Debug URL: ${debugUrl}`);
+
+    if (!session.connectUrl) {
+      throw new AwardSearchError("SESSION_ERROR", "Session has no connect URL. It may have expired.");
+    }
+
+    const browser = await chromium.connectOverCDP(session.connectUrl, {
+      timeout: TIMEOUTS.pageLoad,
+    });
+
+    const contexts = browser.contexts();
+    const context = contexts[0];
+    if (!context) {
+      throw new AwardSearchError("SESSION_ERROR", "No browser context available after reconnect");
+    }
+    const pages = context.pages();
+    const page = pages[0] || (await context.newPage());
+
+    page.setDefaultTimeout(TIMEOUTS.elementInteraction);
+
+    const disconnectSession = async () => {
+      console.log("[award-session] Disconnecting from session...");
+      try {
+        await browser.close().catch(() => {});
+      } finally {
+        this.activeSession = null;
+      }
+      console.log("[award-session] Disconnected (session still alive in Browserbase).");
+    };
+
+    this.activeSession = {
+      sessionId,
+      browser,
+      context,
+      page,
+      debugUrl,
+      close: disconnectSession,
+    };
+
+    console.log("[award-session] Reconnected successfully.");
+    return this.activeSession;
+  }
+
+  async releaseSession(sessionId: string): Promise<void> {
+    console.log(`[award-session] Releasing session: ${sessionId}`);
+    await this.bb.sessions.update(sessionId, {
+      status: "REQUEST_RELEASE",
+      projectId: this.projectId,
+    });
+    console.log("[award-session] Session released.");
   }
 }

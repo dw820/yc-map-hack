@@ -6,6 +6,8 @@ Authenticated scraper for **Dynasty Flyer** mileage/award flight searches on Chi
 
 ## How It Works
 
+Uses Browserbase **long-running sessions** (`keepAlive: true`) to persist auth. After login, the Browserbase session stays alive (up to 1 hour) with live cookies in the browser. Search reconnects to the same session via CDP — no context-based cookie persistence needed.
+
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
 │                        FIRST-TIME LOGIN                            │
@@ -13,36 +15,37 @@ Authenticated scraper for **Dynasty Flyer** mileage/award flight searches on Chi
 │  ┌──────────┐    ┌───────────────┐    ┌──────────────────────┐     │
 │  │ MCP Tool │───▶│ Browserbase   │───▶│ Dynasty Flyer Login  │     │
 │  │ dynasty- │    │ Cloud Browser │    │ Page (email verify)  │     │
-│  │ flyer-   │    │               │    │                      │     │
-│  │ login    │    │ Debug URL ◀───┼────│ User completes login │     │
-│  └──────────┘    │ (live view)   │    │ manually via debug   │     │
+│  │ flyer-   │    │ keepAlive:true│    │                      │     │
+│  │ login    │    │ timeout:3600s │    │ User completes login │     │
+│  └──────────┘    │ Debug URL ◀───┼────│ manually via debug   │     │
 │       │          └───────┬───────┘    │ URL                  │     │
 │       │                  │            └──────────────────────┘     │
 │       │                  ▼                                         │
 │       │          ┌───────────────┐                                 │
 │       │          │ Polls every   │                                 │
-│       └─────────▶│ 5s for up to  │──── Auth cookies saved ────┐    │
-│                  │ 5 minutes     │    in Browserbase context   │    │
-│                  └───────────────┘                             │    │
-│                                                               ▼    │
-│                                                  ┌────────────────┐│
-│                                                  │ CONTEXT_ID     ││
-│                                                  │ (persisted in  ││
-│                                                  │  .env file)    ││
-│                                                  └────────────────┘│
+│       └─────────▶│ 5s for up to  │──── Login confirmed ─────┐     │
+│                  │ 5 minutes     │                           │     │
+│                  └───────────────┘                           │     │
+│                                                             ▼     │
+│                  ┌───────────────┐              ┌────────────────┐ │
+│                  │ Disconnect    │◀─────────────│ SESSION_ID     │ │
+│                  │ Playwright    │              │ (saved to .env │ │
+│                  │ (session      │              │  for reconnect)│ │
+│                  │  stays alive) │              └────────────────┘ │
+│                  └───────────────┘                                 │
 └─────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────────┐
 │                      AWARD FLIGHT SEARCH                           │
 │                                                                    │
 │  ┌──────────┐    ┌───────────────┐    ┌──────────────────────┐     │
-│  │ MCP Tool │───▶│ Browserbase   │───▶│ china-airlines.com   │     │
-│  │ search-  │    │ (reuses       │    │ (already logged in   │     │
-│  │ award-   │    │  CONTEXT_ID   │    │  via saved cookies)  │     │
-│  │ flights  │    │  with auth    │    └──────────┬───────────┘     │
-│  └──────────┘    │  cookies)     │               │                 │
-│                  └───────────────┘               ▼                 │
-│                                       ┌──────────────────────┐     │
+│  │ MCP Tool │───▶│ Reconnect to  │───▶│ dynasty-flyer.com    │     │
+│  │ search-  │    │ same session  │    │ /member/dashboard    │     │
+│  │ award-   │    │ via SESSION_ID│    │ (live cookies — no   │     │
+│  │ flights  │    │ (CDP connect) │    │  login redirect!)    │     │
+│  └──────────┘    └───────────────┘    └──────────┬───────────┘     │
+│                                                  │                 │
+│                                       ┌──────────▼───────────┐     │
 │                                       │ Navigate to Award    │     │
 │   ┌──────────────────────┐            │ Ticket page via      │     │
 │   │ Parse Results        │◀───────────│ member menu          │     │
@@ -55,17 +58,42 @@ Authenticated scraper for **Dynasty Flyer** mileage/award flight searches on Chi
 │   └──────────┬───────────┘            │ (origin, dest, date) │     │
 │              │                        └──────────────────────┘     │
 │              ▼                                                     │
-│   ┌──────────────────────┐                                         │
-│   │ AwardFlightOption[]  │                                         │
-│   │                      │                                         │
-│   │ • milesPrice         │                                         │
-│   │ • taxesAndFees       │                                         │
-│   │ • seatAvailability   │                                         │
-│   │ • bookingClass       │                                         │
+│   ┌──────────────────────┐    ┌───────────────┐                    │
+│   │ AwardFlightOption[]  │    │ Disconnect    │                    │
+│   │                      │    │ (session stays│                    │
+│   │ • milesPrice         │    │  alive for    │                    │
+│   │ • taxesAndFees       │    │  more searches│                    │
+│   │ • seatAvailability   │    │  up to 1 hr)  │                    │
+│   │ • bookingClass       │    └───────────────┘                    │
 │   │ • segments           │                                         │
 │   └──────────────────────┘                                         │
 └─────────────────────────────────────────────────────────────────────┘
 ```
+
+---
+
+## Session Lifecycle
+
+```
+Login                Search 1             Search 2             Timeout
+  │                    │                    │                    │
+  ▼                    ▼                    ▼                    ▼
+CREATE session ──── RECONNECT ─────── RECONNECT ─────── session expires
+(keepAlive:true)   (CDP connect)     (CDP connect)      (after 1 hour)
+  │                    │                    │
+  ├─ user logs in      ├─ navigate          ├─ navigate
+  ├─ DISCONNECT        ├─ fill form         ├─ fill form
+  │  (session alive)   ├─ get results       ├─ get results
+  │                    ├─ DISCONNECT        ├─ DISCONNECT
+  │                    │  (session alive)   │  (session alive)
+  ▼                    ▼                    ▼
+```
+
+Key points:
+- `close()` only disconnects the Playwright CDP connection — no `page.close()`, so browser tabs and cookies stay alive
+- Sessions survive up to `browserbaseSessionTimeout` (default 1 hour, max 6 hours)
+- Multiple searches can reuse the same session without re-authenticating
+- If session expires, `reconnectToSession()` throws `AUTH_REQUIRED` prompting re-login
 
 ---
 
@@ -87,7 +115,7 @@ lib/china-airlines-award/
 │                            Network interception (JSON APIs) + DOM fallback (regex)
 │
 ├── browser-session.ts    ← Browserbase session manager (singleton)
-│                            Separate context from cash module (DYNASTY_FLYER_CONTEXT_ID)
+│                            keepAlive sessions, reconnect, disconnect, release
 │
 ├── config.ts             ← URLs, timeouts, CSS selectors, API patterns
 │
@@ -103,30 +131,28 @@ loginDynastyFlyer()                    searchAwardFlights(input)
         │                                       │
         ▼                                       ▼
  startLoginSession()                   Validate input (Zod)
+ (keepAlive: true)                              │
+        │                                       ▼
+        ▼                              Reconnect to session
+ Navigate to login URL                 (manager.reconnectToSession)
         │                                       │
         ▼                                       ▼
- Navigate to login URL                 Create browser session
-        │                              (reuses auth context)
-        ▼                                       │
- pollForLoginCompletion()                       ▼
- (5s interval, 5min max)              checkAuthStatus()
-        │                              ├── authenticated? ──▶ continue
-        ▼                              └── not auth? ──▶ throw AUTH_REQUIRED
- checkAuthStatus()                              │
+ pollForLoginCompletion()              createNetworkInterceptor()
+ (5s interval, 5min max)                        │
         │                                       ▼
-        ▼                              createNetworkInterceptor()
- Close session                                  │
- (cookies persist)                              ▼
-        │                              navigateToAwardPage()
-        ▼                              (member menu → award link → new tab?)
+        ▼                              navigateToAwardPage()
+ Disconnect Playwright                 (dashboard → award link → new tab?)
+ (session stays alive)                          │
+        │                                       ▼
+        ▼                              fillAndSubmitAwardSearchForm()
  Return LoginResult                             │
- { contextId, debugUrl }                        ▼
-                                       fillAndSubmitAwardSearchForm()
-                                                │
-                                                ▼
+ { sessionId, contextId }                       ▼
                                        parseAwardResults()
                                        ├── API JSON found? ──▶ parse structured data
                                        └── no API data? ──▶ DOM regex fallback
+                                                │
+                                                ▼
+                                       Disconnect (session stays alive)
                                                 │
                                                 ▼
                                        Return AwardSearchResult
@@ -140,7 +166,8 @@ loginDynastyFlyer()                    searchAwardFlights(input)
 | Aspect | Cash (`lib/china-airlines/`) | Award (`lib/china-airlines-award/`) |
 |--------|------------------------------|--------------------------------------|
 | Auth required | No | Yes (Dynasty Flyer login) |
-| Browser context env var | `CHINA_AIRLINES_CONTEXT_ID` | `DYNASTY_FLYER_CONTEXT_ID` |
+| Session persistence | Ephemeral sessions | Long-running keepAlive sessions |
+| Key env var | `CHINA_AIRLINES_CONTEXT_ID` | `DYNASTY_FLYER_SESSION_ID` |
 | Target site | `china-airlines.com` booking | `membersonair.china-airlines.com` |
 | Login polling | N/A | 5 min timeout, 5s interval |
 | Price data | Cash (USD/TWD) | Miles + taxes/fees |
@@ -156,7 +183,10 @@ loginDynastyFlyer()                    searchAwardFlights(input)
 BROWSERBASE_API_KEY=your-api-key
 BROWSERBASE_PROJECT_ID=your-project-id
 
-# Created by dynasty-flyer-login, set in .env to persist
+# Session ID from dynasty-flyer-login — search reconnects to this live session
+DYNASTY_FLYER_SESSION_ID=session_xxxxxxxx
+
+# Context ID (optional) — used when creating new sessions
 DYNASTY_FLYER_CONTEXT_ID=ctx_xxxxxxxx
 ```
 
@@ -164,11 +194,14 @@ DYNASTY_FLYER_CONTEXT_ID=ctx_xxxxxxxx
 
 ## Usage via MCP Tools
 
-**Step 1 — Login (once):**
-Call the `dynasty-flyer-login` tool. It opens a Browserbase session and returns a debug URL. Complete login via the debug URL (email verification required). The tool polls for completion and saves cookies in a persistent context.
+**Step 1 — Login (once per hour):**
+Call the `dynasty-flyer-login` tool. It opens a Browserbase session with `keepAlive: true` and returns a debug URL. Complete login via the debug URL (email verification required). After login, Playwright disconnects but the session stays alive with live cookies. The session ID is stored for reconnection.
 
-**Step 2 — Search:**
-Call `search-award-flights` with origin, destination, and date. It reuses the authenticated context to search for award availability.
+**Step 2 — Search (reuses live session):**
+Call `search-award-flights` with origin, destination, and date. It reconnects to the live Browserbase session — the browser still has authenticated cookies, so no login redirect occurs. After search, Playwright disconnects again (session stays alive for more searches).
+
+**Session expiry:**
+Sessions last up to 1 hour (configurable via `browserbaseSessionTimeout`). If a session expires, search throws `AUTH_REQUIRED` and the user must re-login.
 
 ---
 

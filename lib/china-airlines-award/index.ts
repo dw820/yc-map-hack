@@ -56,14 +56,22 @@ export async function loginDynastyFlyer(): Promise<LoginResult> {
     // Polling confirms login succeeded by detecting redirect to china-airlines.com
     await pollForLoginCompletion(session.page);
 
+    // Capture before disconnecting
+    const sessionId = session.sessionId;
+    const debugUrl = session.debugUrl;
+
+    // Disconnect Playwright — Browserbase session stays alive with keepAlive
+    await session.close(); // now just disconnects, session remains running
+    session = undefined; // prevent finally block from disconnecting again
+
     return {
       success: true,
-      debugUrl: session.debugUrl,
-      sessionId: session.sessionId,
+      debugUrl,
+      sessionId,
       contextId,
       message:
-        `Login successful! ` +
-        `Set DYNASTY_FLYER_CONTEXT_ID=${contextId} in your .env to persist this session.`,
+        `Login successful! Session ${sessionId} is alive for reconnection. ` +
+        `Set DYNASTY_FLYER_SESSION_ID=${sessionId} in your .env to reuse.`,
     };
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
@@ -114,10 +122,19 @@ export async function searchAwardFlights(
     }
 
     const manager = AwardBrowserSessionManager.getInstance();
+    const sessionId = manager.getSessionId();
+
+    if (!sessionId) {
+      throw new AwardSearchError(
+        "AUTH_REQUIRED",
+        "No active session. Please login first with the dynasty-flyer-login tool."
+      );
+    }
+
     let session;
 
     try {
-      session = await manager.createSession();
+      session = await manager.reconnectToSession(sessionId);
       const { page, context } = session;
 
       // Set up network interception before navigating
