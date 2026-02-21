@@ -1,0 +1,4323 @@
+{
+  "data": {
+    "airBoundGroups": [
+      {
+        "boundDetails": {
+          "originLocationCode": "TPE",
+          "destinationLocationCode": "NRT",
+          "duration": 12300,
+          "ranking": 3,
+          "segments": [
+            {
+              "flightId": "SEG-CI108-TPENRT-2026-04-15-1435"
+            }
+          ]
+        },
+        "airBounds": [
+          {
+            "airBoundId": "BC1-1-1I3CIZ_N64Y26GK8OQFQSKDYEFQ5HPQPXUC",
+            "fareFamilyCode": "TWSHECD",
+            "isCheapestOffer": true,
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI108-TPENRT-2026-04-15-1435",
+                "cabin": "eco",
+                "bookingClass": "L",
+                "statusCode": "HK",
+                "quota": 2
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "LLONF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI108-TPENRT-2026-04-15-1435"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 5741,
+                      "total": 7584,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 5741,
+                  "total": 7584,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA1-C0GOC1",
+                "flightIds": [
+                  "SEG-CI108-TPENRT-2026-04-15-1435"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 7584,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 5741,
+                        "total": 7584,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 5741,
+                    "total": 7584,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN1",
+              "PEN2",
+              "PEN3"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_WR786CQMCB7P7N0XCPPLBXCH4L1I",
+            "fareFamilyCode": "TWSHECB",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI108-TPENRT-2026-04-15-1435",
+                "cabin": "eco",
+                "bookingClass": "N",
+                "statusCode": "HK",
+                "quota": 9
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "NLONF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI108-TPENRT-2026-04-15-1435"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 6170,
+                      "total": 8013,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 6170,
+                  "total": 8013,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA1-C0GOC1",
+                "flightIds": [
+                  "SEG-CI108-TPENRT-2026-04-15-1435"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 8013,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 6170,
+                        "total": 8013,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 6170,
+                    "total": 8013,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN4",
+              "PEN5",
+              "PEN6"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_JMJDT1OUTWYJ3FDUWIEYCBMHYS9K",
+            "fareFamilyCode": "TWSHECS",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI108-TPENRT-2026-04-15-1435",
+                "cabin": "eco",
+                "bookingClass": "T",
+                "statusCode": "HK",
+                "quota": 9
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "TLONF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI108-TPENRT-2026-04-15-1435"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 9962,
+                      "total": 11805,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 9962,
+                  "total": 11805,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA2-C0GOC1",
+                "flightIds": [
+                  "SEG-CI108-TPENRT-2026-04-15-1435"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 11805,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 9962,
+                        "total": 11805,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 9962,
+                    "total": 11805,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN7",
+              "PEN8",
+              "PEN9"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_5RROV6YUVJXRPHSPKYBTFDM9NXQP",
+            "fareFamilyCode": "TWSHECF",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI108-TPENRT-2026-04-15-1435",
+                "cabin": "eco",
+                "bookingClass": "M",
+                "statusCode": "HK",
+                "quota": 9
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "MLOF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI108-TPENRT-2026-04-15-1435"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 14754,
+                      "total": 16597,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 14754,
+                  "total": 16597,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA2-C0GOC1",
+                "flightIds": [
+                  "SEG-CI108-TPENRT-2026-04-15-1435"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 16597,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 14754,
+                        "total": 16597,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 14754,
+                    "total": 16597,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN10",
+              "PEN11",
+              "PEN12"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_4WEW9H4OAU95BFKRP596S7XJCOGN",
+            "fareFamilyCode": "TWSHBZB",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI108-TPENRT-2026-04-15-1435",
+                "cabin": "business",
+                "bookingClass": "D",
+                "statusCode": "HK",
+                "quota": 5
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "DLONF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI108-TPENRT-2026-04-15-1435"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 18785,
+                      "total": 20628,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 18785,
+                  "total": 20628,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA3-C0FMC2",
+                "flightIds": [
+                  "SEG-CI108-TPENRT-2026-04-15-1435"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 20628,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 18785,
+                        "total": 20628,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 18785,
+                    "total": 20628,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN13",
+              "PEN14",
+              "PEN15"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_9SWRMNCQ6K5K6Y1R8FFLXJT3WCEJ",
+            "fareFamilyCode": "TWSHBZS",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI108-TPENRT-2026-04-15-1435",
+                "cabin": "business",
+                "bookingClass": "C",
+                "statusCode": "HK",
+                "quota": 7
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "CLONF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI108-TPENRT-2026-04-15-1435"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 30958,
+                      "total": 32801,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 30958,
+                  "total": 32801,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA3-C0FMC2",
+                "flightIds": [
+                  "SEG-CI108-TPENRT-2026-04-15-1435"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 32801,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 30958,
+                        "total": 32801,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 30958,
+                    "total": 32801,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN16",
+              "PEN17",
+              "PEN18"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_A5OQCB7IREHNSF696D7ZHNKK9K2Q",
+            "fareFamilyCode": "TWSHBZF",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI108-TPENRT-2026-04-15-1435",
+                "cabin": "business",
+                "bookingClass": "J",
+                "statusCode": "HK",
+                "quota": 9
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "JLOF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI108-TPENRT-2026-04-15-1435"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 40982,
+                      "total": 42825,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 40982,
+                  "total": 42825,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA3-C0FMC2",
+                "flightIds": [
+                  "SEG-CI108-TPENRT-2026-04-15-1435"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 42825,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 40982,
+                        "total": 42825,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 40982,
+                    "total": 42825,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN10",
+              "PEN11",
+              "PEN12"
+            ]
+          }
+        ]
+      },
+      {
+        "boundDetails": {
+          "originLocationCode": "TPE",
+          "destinationLocationCode": "NRT",
+          "duration": 12300,
+          "ranking": 4,
+          "segments": [
+            {
+              "flightId": "SEG-CI106-TPENRT-2026-04-15-1625"
+            }
+          ]
+        },
+        "airBounds": [
+          {
+            "airBoundId": "BC1-1-1I3CIZ_0TSX0ROSRVK51OPCF3RGODZU3GFT",
+            "fareFamilyCode": "TWSHECB",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI106-TPENRT-2026-04-15-1625",
+                "cabin": "eco",
+                "bookingClass": "N",
+                "statusCode": "HK",
+                "quota": 9
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "NLONF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI106-TPENRT-2026-04-15-1625"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 6170,
+                      "total": 8013,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 6170,
+                  "total": 8013,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA1-C0GOC1",
+                "flightIds": [
+                  "SEG-CI106-TPENRT-2026-04-15-1625"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 8013,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 6170,
+                        "total": 8013,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 6170,
+                    "total": 8013,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN4",
+              "PEN5",
+              "PEN6"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_N46S76HT4YDQL3F98EF1LX9L9B8Z",
+            "fareFamilyCode": "TWSHECS",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI106-TPENRT-2026-04-15-1625",
+                "cabin": "eco",
+                "bookingClass": "T",
+                "statusCode": "HK",
+                "quota": 9
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "TLONF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI106-TPENRT-2026-04-15-1625"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 9962,
+                      "total": 11805,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 9962,
+                  "total": 11805,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA2-C0GOC1",
+                "flightIds": [
+                  "SEG-CI106-TPENRT-2026-04-15-1625"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 11805,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 9962,
+                        "total": 11805,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 9962,
+                    "total": 11805,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN7",
+              "PEN8",
+              "PEN9"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_DH78S39R2C2E3R9MR8Z5E15U1C20",
+            "fareFamilyCode": "TWSHECF",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI106-TPENRT-2026-04-15-1625",
+                "cabin": "eco",
+                "bookingClass": "M",
+                "statusCode": "HK",
+                "quota": 9
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "MLOF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI106-TPENRT-2026-04-15-1625"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 14754,
+                      "total": 16597,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 14754,
+                  "total": 16597,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA2-C0GOC1",
+                "flightIds": [
+                  "SEG-CI106-TPENRT-2026-04-15-1625"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 16597,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 14754,
+                        "total": 16597,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 14754,
+                    "total": 16597,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN10",
+              "PEN11",
+              "PEN12"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_5R8Z3HJF5DFIQVE9WUME6ZHDRC0E",
+            "fareFamilyCode": "TWSHBZB",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI106-TPENRT-2026-04-15-1625",
+                "cabin": "business",
+                "bookingClass": "D",
+                "statusCode": "HK",
+                "quota": 7
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "DLONF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI106-TPENRT-2026-04-15-1625"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 18785,
+                      "total": 20628,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 18785,
+                  "total": 20628,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA3-C0FMC2",
+                "flightIds": [
+                  "SEG-CI106-TPENRT-2026-04-15-1625"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 20628,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 18785,
+                        "total": 20628,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 18785,
+                    "total": 20628,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN13",
+              "PEN14",
+              "PEN15"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_ZBA4O4W2RDHSN5NB9N7D7WZFMOWZ",
+            "fareFamilyCode": "TWSHBZS",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI106-TPENRT-2026-04-15-1625",
+                "cabin": "business",
+                "bookingClass": "C",
+                "statusCode": "HK",
+                "quota": 9
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "CLONF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI106-TPENRT-2026-04-15-1625"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 30958,
+                      "total": 32801,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 30958,
+                  "total": 32801,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA3-C0FMC2",
+                "flightIds": [
+                  "SEG-CI106-TPENRT-2026-04-15-1625"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 32801,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 30958,
+                        "total": 32801,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 30958,
+                    "total": 32801,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN16",
+              "PEN17",
+              "PEN18"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_UQ5MC6P2DQML93AH7K30T5O95UNI",
+            "fareFamilyCode": "TWSHBZF",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI106-TPENRT-2026-04-15-1625",
+                "cabin": "business",
+                "bookingClass": "J",
+                "statusCode": "HK",
+                "quota": 9
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "JLOF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI106-TPENRT-2026-04-15-1625"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 40982,
+                      "total": 42825,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 40982,
+                  "total": 42825,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA3-C0FMC2",
+                "flightIds": [
+                  "SEG-CI106-TPENRT-2026-04-15-1625"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 42825,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 40982,
+                        "total": 42825,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 40982,
+                    "total": 42825,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN10",
+              "PEN11",
+              "PEN12"
+            ]
+          }
+        ]
+      },
+      {
+        "boundDetails": {
+          "originLocationCode": "TPE",
+          "destinationLocationCode": "NRT",
+          "duration": 12000,
+          "ranking": 2,
+          "segments": [
+            {
+              "flightId": "SEG-CI104-TPENRT-2026-04-15-1215"
+            }
+          ]
+        },
+        "airBounds": [
+          {
+            "airBoundId": "BC1-1-1I3CIZ_046MNK4XA3MKMH237C8HZK18HNUU",
+            "fareFamilyCode": "TWSHECB",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI104-TPENRT-2026-04-15-1215",
+                "cabin": "eco",
+                "bookingClass": "R",
+                "statusCode": "HK",
+                "quota": 5
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "RLOLF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI104-TPENRT-2026-04-15-1215"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 7863,
+                      "total": 9706,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 7863,
+                  "total": 9706,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA1-C0GOC1",
+                "flightIds": [
+                  "SEG-CI104-TPENRT-2026-04-15-1215"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 9706,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 7863,
+                        "total": 9706,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 7863,
+                    "total": 9706,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN4",
+              "PEN5",
+              "PEN6"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_FN0VLHVQO4NQNS02O68M4JNYV86N",
+            "fareFamilyCode": "TWSHECS",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI104-TPENRT-2026-04-15-1215",
+                "cabin": "eco",
+                "bookingClass": "T",
+                "statusCode": "HK",
+                "quota": 9
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "TLOLF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI104-TPENRT-2026-04-15-1215"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 10592,
+                      "total": 12435,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 10592,
+                  "total": 12435,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA2-C0GOC1",
+                "flightIds": [
+                  "SEG-CI104-TPENRT-2026-04-15-1215"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 12435,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 10592,
+                        "total": 12435,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 10592,
+                    "total": 12435,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN7",
+              "PEN8",
+              "PEN9"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_GYOM1AVGK5NF3VIV38VJW9B6P009",
+            "fareFamilyCode": "TWSHECF",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI104-TPENRT-2026-04-15-1215",
+                "cabin": "eco",
+                "bookingClass": "M",
+                "statusCode": "HK",
+                "quota": 9
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "MLOF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI104-TPENRT-2026-04-15-1215"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 14754,
+                      "total": 16597,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 14754,
+                  "total": 16597,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA2-C0GOC1",
+                "flightIds": [
+                  "SEG-CI104-TPENRT-2026-04-15-1215"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 16597,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 14754,
+                        "total": 16597,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 14754,
+                    "total": 16597,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN10",
+              "PEN11",
+              "PEN12"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_0FVXHH6UHVUYA52DA33TDJN0V5SU",
+            "fareFamilyCode": "TWSHBZB",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI104-TPENRT-2026-04-15-1215",
+                "cabin": "business",
+                "bookingClass": "D",
+                "statusCode": "HK",
+                "quota": 7
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "DLOF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI104-TPENRT-2026-04-15-1215"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 20166,
+                      "total": 22009,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 20166,
+                  "total": 22009,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA3-C0FMC2",
+                "flightIds": [
+                  "SEG-CI104-TPENRT-2026-04-15-1215"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 22009,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 20166,
+                        "total": 22009,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 20166,
+                    "total": 22009,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN13",
+              "PEN14",
+              "PEN15"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_G3GYUU5WEBV68QPWH05FEUX2EM7W",
+            "fareFamilyCode": "TWSHBZS",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI104-TPENRT-2026-04-15-1215",
+                "cabin": "business",
+                "bookingClass": "C",
+                "statusCode": "HK",
+                "quota": 9
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "CLOF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI104-TPENRT-2026-04-15-1215"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 31525,
+                      "total": 33368,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 31525,
+                  "total": 33368,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA3-C0FMC2",
+                "flightIds": [
+                  "SEG-CI104-TPENRT-2026-04-15-1215"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 33368,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 31525,
+                        "total": 33368,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 31525,
+                    "total": 33368,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN16",
+              "PEN17",
+              "PEN18"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_6J83BBO3EJJGRV5AXY0A28W0KR2Y",
+            "fareFamilyCode": "TWSHBZF",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI104-TPENRT-2026-04-15-1215",
+                "cabin": "business",
+                "bookingClass": "J",
+                "statusCode": "HK",
+                "quota": 9
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "JLOF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI104-TPENRT-2026-04-15-1215"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 40982,
+                      "total": 42825,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 40982,
+                  "total": 42825,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA3-C0FMC2",
+                "flightIds": [
+                  "SEG-CI104-TPENRT-2026-04-15-1215"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 42825,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 40982,
+                        "total": 42825,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 40982,
+                    "total": 42825,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN10",
+              "PEN11",
+              "PEN12"
+            ]
+          }
+        ]
+      },
+      {
+        "boundDetails": {
+          "originLocationCode": "TPE",
+          "destinationLocationCode": "NRT",
+          "duration": 12300,
+          "ranking": 1,
+          "segments": [
+            {
+              "flightId": "SEG-CI100-TPENRT-2026-04-15-0850"
+            }
+          ]
+        },
+        "airBounds": [
+          {
+            "airBoundId": "BC1-1-1I3CIZ_46EOGKAQX8AZC08B7VA4S6WPXWQA",
+            "fareFamilyCode": "TWSHECB",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI100-TPENRT-2026-04-15-0850",
+                "cabin": "eco",
+                "bookingClass": "Q",
+                "statusCode": "HK",
+                "quota": 2
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "QLOF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI100-TPENRT-2026-04-15-0850"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 8135,
+                      "total": 9978,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 8135,
+                  "total": 9978,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA1-C0GOC1",
+                "flightIds": [
+                  "SEG-CI100-TPENRT-2026-04-15-0850"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 9978,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 8135,
+                        "total": 9978,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 8135,
+                    "total": 9978,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN4",
+              "PEN5",
+              "PEN6"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_GOOB2MZCHB1D9I84KIESSNYYOUIX",
+            "fareFamilyCode": "TWSHECS",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI100-TPENRT-2026-04-15-0850",
+                "cabin": "eco",
+                "bookingClass": "T",
+                "statusCode": "HK",
+                "quota": 9
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "TLOF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI100-TPENRT-2026-04-15-0850"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 11160,
+                      "total": 13003,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 11160,
+                  "total": 13003,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA2-C0GOC1",
+                "flightIds": [
+                  "SEG-CI100-TPENRT-2026-04-15-0850"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 13003,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 11160,
+                        "total": 13003,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 11160,
+                    "total": 13003,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN7",
+              "PEN8",
+              "PEN9"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_D9R3VYHP9RGA2GS0XQVEAVNKE3W9",
+            "fareFamilyCode": "TWSHECF",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI100-TPENRT-2026-04-15-0850",
+                "cabin": "eco",
+                "bookingClass": "M",
+                "statusCode": "HK",
+                "quota": 9
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "MLOF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI100-TPENRT-2026-04-15-0850"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 14754,
+                      "total": 16597,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 14754,
+                  "total": 16597,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA2-C0GOC1",
+                "flightIds": [
+                  "SEG-CI100-TPENRT-2026-04-15-0850"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 16597,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 14754,
+                        "total": 16597,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 14754,
+                    "total": 16597,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN10",
+              "PEN11",
+              "PEN12"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_ZUYV6OR7F9JX7Z7RD6UFSSLZ3HUY",
+            "fareFamilyCode": "TWSHBZB",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI100-TPENRT-2026-04-15-0850",
+                "cabin": "business",
+                "bookingClass": "D",
+                "statusCode": "HK",
+                "quota": 5
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "DLOF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI100-TPENRT-2026-04-15-0850"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 20166,
+                      "total": 22009,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 20166,
+                  "total": 22009,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA3-C0FMC2",
+                "flightIds": [
+                  "SEG-CI100-TPENRT-2026-04-15-0850"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 22009,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 20166,
+                        "total": 22009,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 20166,
+                    "total": 22009,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN13",
+              "PEN14",
+              "PEN15"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_20SL1UEDSNP5Q3VDESV1A0IG4JG4",
+            "fareFamilyCode": "TWSHBZS",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI100-TPENRT-2026-04-15-0850",
+                "cabin": "business",
+                "bookingClass": "C",
+                "statusCode": "HK",
+                "quota": 9
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "CLOF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI100-TPENRT-2026-04-15-0850"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 31525,
+                      "total": 33368,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 31525,
+                  "total": 33368,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA3-C0FMC2",
+                "flightIds": [
+                  "SEG-CI100-TPENRT-2026-04-15-0850"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 33368,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 31525,
+                        "total": 33368,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 31525,
+                    "total": 33368,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN16",
+              "PEN17",
+              "PEN18"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_F5H1MGXVY629PDC6V668LVOF7FLW",
+            "fareFamilyCode": "TWSHBZF",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI100-TPENRT-2026-04-15-0850",
+                "cabin": "business",
+                "bookingClass": "J",
+                "statusCode": "HK",
+                "quota": 9
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "JLOF",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI100-TPENRT-2026-04-15-0850"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 40982,
+                      "total": 42825,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 40982,
+                  "total": 42825,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA3-C0FMC2",
+                "flightIds": [
+                  "SEG-CI100-TPENRT-2026-04-15-0850"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 42825,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 40982,
+                        "total": 42825,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 40982,
+                    "total": 42825,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN10",
+              "PEN11",
+              "PEN12"
+            ]
+          }
+        ]
+      },
+      {
+        "boundDetails": {
+          "originLocationCode": "TPE",
+          "destinationLocationCode": "NRT",
+          "duration": 12600,
+          "ranking": 5,
+          "segments": [
+            {
+              "flightId": "SEG-CI9902-TPENRT-2026-04-15-1025"
+            }
+          ]
+        },
+        "airBounds": [
+          {
+            "airBoundId": "BC1-1-1I3CIZ_R6VTKWZADTIE9QOQXLLU0FGRDL71",
+            "fareFamilyCode": "TWSHECF",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI9902-TPENRT-2026-04-15-1025",
+                "cabin": "eco",
+                "bookingClass": "B",
+                "statusCode": "HK",
+                "quota": 4
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "BLCDO",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI9902-TPENRT-2026-04-15-1025"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 19924,
+                      "total": 21767,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 19924,
+                  "total": 21767,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA2-C0GOC1",
+                "flightIds": [
+                  "SEG-CI9902-TPENRT-2026-04-15-1025"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 21767,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 19924,
+                        "total": 21767,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 19924,
+                    "total": 21767,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN10",
+              "PEN11",
+              "PEN12"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_TSFRHG3L4JRIG1XEXM1TER1COO3I",
+            "fareFamilyCode": "TWSHBZB",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI9902-TPENRT-2026-04-15-1025",
+                "cabin": "business",
+                "bookingClass": "D",
+                "statusCode": "HK",
+                "quota": 2
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "DLCDO",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI9902-TPENRT-2026-04-15-1025"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 27742,
+                      "total": 29585,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 27742,
+                  "total": 29585,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA3-C0FMC2",
+                "flightIds": [
+                  "SEG-CI9902-TPENRT-2026-04-15-1025"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 29585,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 27742,
+                        "total": 29585,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 27742,
+                    "total": 29585,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN13",
+              "PEN14",
+              "PEN15"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_RL0DOHYJSN81P0Z6ANI2V46QFIID",
+            "fareFamilyCode": "TWSHBZS",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI9902-TPENRT-2026-04-15-1025",
+                "cabin": "business",
+                "bookingClass": "C",
+                "statusCode": "HK",
+                "quota": 2
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "CLCDO",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI9902-TPENRT-2026-04-15-1025"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 31903,
+                      "total": 33746,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 31903,
+                  "total": 33746,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA3-C0FMC2",
+                "flightIds": [
+                  "SEG-CI9902-TPENRT-2026-04-15-1025"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 33746,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 31903,
+                        "total": 33746,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 31903,
+                    "total": 33746,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN16",
+              "PEN17",
+              "PEN18"
+            ]
+          },
+          {
+            "airBoundId": "BC1-1-1I3CIZ_O640H4UKR8DFWBR39RHVZS9DD4XS",
+            "fareFamilyCode": "TWSHBZF",
+            "availabilityDetails": [
+              {
+                "flightId": "SEG-CI9902-TPENRT-2026-04-15-1025",
+                "cabin": "business",
+                "bookingClass": "J",
+                "statusCode": "HK",
+                "quota": 4
+              }
+            ],
+            "fareInfos": [
+              {
+                "fareType": "unifares",
+                "fareClass": "JLCDO",
+                "pricedPassengerTypeCodes": [
+                  "ADT"
+                ],
+                "travelerIds": [
+                  "ADT-1"
+                ],
+                "flightIds": [
+                  "SEG-CI9902-TPENRT-2026-04-15-1025"
+                ]
+              }
+            ],
+            "prices": {
+              "unitPrices": [
+                {
+                  "travelerIds": [
+                    "ADT-1"
+                  ],
+                  "prices": [
+                    {
+                      "base": 41298,
+                      "total": 43141,
+                      "currencyCode": "TWD",
+                      "taxes": [
+                        {
+                          "value": 1343,
+                          "currencyCode": "TWD",
+                          "code": "YQYR"
+                        }
+                      ],
+                      "totalTaxes": 1843
+                    }
+                  ]
+                }
+              ],
+              "totalPrices": [
+                {
+                  "base": 41298,
+                  "total": 43141,
+                  "currencyCode": "TWD",
+                  "taxes": [
+                    {
+                      "value": 1343,
+                      "currencyCode": "TWD",
+                      "code": "YQYR"
+                    }
+                  ],
+                  "totalTaxes": 1843
+                }
+              ]
+            },
+            "services": [
+              {
+                "serviceCode": "FBA3-C0FMC2",
+                "flightIds": [
+                  "SEG-CI9902-TPENRT-2026-04-15-1025"
+                ]
+              }
+            ],
+            "airOffer": {
+              "totalPrice": {
+                "value": 43141,
+                "currencyCode": "TWD"
+              },
+              "prices": {
+                "unitPrices": [
+                  {
+                    "travelerIds": [
+                      "ADT-1"
+                    ],
+                    "prices": [
+                      {
+                        "base": 41298,
+                        "total": 43141,
+                        "currencyCode": "TWD",
+                        "taxes": [
+                          {
+                            "value": 1343,
+                            "currencyCode": "TWD",
+                            "code": "YQYR"
+                          }
+                        ],
+                        "totalTaxes": 1843
+                      }
+                    ]
+                  }
+                ],
+                "totalPrices": [
+                  {
+                    "base": 41298,
+                    "total": 43141,
+                    "currencyCode": "TWD",
+                    "taxes": [
+                      {
+                        "value": 1343,
+                        "currencyCode": "TWD",
+                        "code": "YQYR"
+                      }
+                    ],
+                    "totalTaxes": 1843
+                  }
+                ]
+              }
+            },
+            "fareConditionsCodes": [
+              "PEN10",
+              "PEN11",
+              "PEN12"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "meta": {
+    "office": {
+      "officeId": "TPECI08AB"
+    }
+  },
+  "dictionaries": {
+    "location": {
+      "TPE": {
+        "type": "airport",
+        "airportName": "TAIWAN TAOYUAN INTL",
+        "cityCode": "TPE",
+        "cityName": "TAIPEI",
+        "countryCode": "TW"
+      },
+      "NRT": {
+        "type": "airport",
+        "airportName": "NARITA INTL",
+        "cityCode": "TYO",
+        "cityName": "TOKYO",
+        "countryCode": "JP"
+      },
+      "TYO": {
+        "type": "city",
+        "cityCode": "TYO",
+        "cityName": "TOKYO",
+        "countryCode": "JP"
+      }
+    },
+    "country": {
+      "TW": "TAIWAN",
+      "JP": "JAPAN"
+    },
+    "airline": {
+      "JL": "JAPAN AIRLINES",
+      "CI": "CHINA AIRLINES LTD."
+    },
+    "aircraft": {
+      "333": "AIRBUS A330-300",
+      "32Q": "AIRBUS A321NEO",
+      "73H": "BOEING 737-800 (WINGLETS)"
+    },
+    "flight": {
+      "SEG-CI106-TPENRT-2026-04-15-1625": {
+        "marketingAirlineCode": "CI",
+        "operatingAirlineCode": "CI",
+        "marketingFlightNumber": "106",
+        "departure": {
+          "locationCode": "TPE",
+          "dateTime": "2026-04-15T16:25:00.000+08:00",
+          "terminal": "2"
+        },
+        "arrival": {
+          "locationCode": "NRT",
+          "dateTime": "2026-04-15T20:50:00.000+09:00",
+          "terminal": "2"
+        },
+        "aircraftCode": "32Q",
+        "duration": 12300,
+        "isOpenSegment": false,
+        "secureFlightIndicator": false
+      },
+      "SEG-CI100-TPENRT-2026-04-15-0850": {
+        "marketingAirlineCode": "CI",
+        "operatingAirlineCode": "CI",
+        "marketingFlightNumber": "100",
+        "departure": {
+          "locationCode": "TPE",
+          "dateTime": "2026-04-15T08:50:00.000+08:00",
+          "terminal": "2"
+        },
+        "arrival": {
+          "locationCode": "NRT",
+          "dateTime": "2026-04-15T13:15:00.000+09:00",
+          "terminal": "2"
+        },
+        "aircraftCode": "333",
+        "duration": 12300,
+        "isOpenSegment": false,
+        "secureFlightIndicator": false
+      },
+      "SEG-CI108-TPENRT-2026-04-15-1435": {
+        "marketingAirlineCode": "CI",
+        "operatingAirlineCode": "CI",
+        "marketingFlightNumber": "108",
+        "departure": {
+          "locationCode": "TPE",
+          "dateTime": "2026-04-15T14:35:00.000+08:00",
+          "terminal": "2"
+        },
+        "arrival": {
+          "locationCode": "NRT",
+          "dateTime": "2026-04-15T19:00:00.000+09:00",
+          "terminal": "2"
+        },
+        "aircraftCode": "32Q",
+        "duration": 12300,
+        "isOpenSegment": false,
+        "secureFlightIndicator": false
+      },
+      "SEG-CI9902-TPENRT-2026-04-15-1025": {
+        "marketingAirlineCode": "CI",
+        "operatingAirlineCode": "JL",
+        "marketingFlightNumber": "9902",
+        "departure": {
+          "locationCode": "TPE",
+          "dateTime": "2026-04-15T10:25:00.000+08:00",
+          "terminal": "2"
+        },
+        "arrival": {
+          "locationCode": "NRT",
+          "dateTime": "2026-04-15T14:55:00.000+09:00",
+          "terminal": "2"
+        },
+        "aircraftCode": "73H",
+        "duration": 12600,
+        "isOpenSegment": false,
+        "secureFlightIndicator": false
+      },
+      "SEG-CI104-TPENRT-2026-04-15-1215": {
+        "marketingAirlineCode": "CI",
+        "operatingAirlineCode": "CI",
+        "marketingFlightNumber": "104",
+        "departure": {
+          "locationCode": "TPE",
+          "dateTime": "2026-04-15T12:15:00.000+08:00",
+          "terminal": "2"
+        },
+        "arrival": {
+          "locationCode": "NRT",
+          "dateTime": "2026-04-15T16:35:00.000+09:00",
+          "terminal": "2"
+        },
+        "aircraftCode": "32Q",
+        "duration": 12000,
+        "isOpenSegment": false,
+        "secureFlightIndicator": false
+      }
+    },
+    "currency": {
+      "TWD": {
+        "name": "NEW TAIWAN DOLL",
+        "decimalPlaces": 0
+      }
+    },
+    "anonymousTraveler": {
+      "ADT-1": {
+        "passengerTypeCode": "ADT"
+      }
+    },
+    "fareFamilyWithServices": {
+      "TWSHBZF": {
+        "hierarchy": 1000,
+        "commercialFareFamily": "BZCLASS",
+        "cabin": "business"
+      },
+      "TWSHECF": {
+        "hierarchy": 7000,
+        "commercialFareFamily": "ECONEW",
+        "cabin": "eco"
+      },
+      "TWSHBZB": {
+        "hierarchy": 3000,
+        "commercialFareFamily": "BZCLASS",
+        "cabin": "business"
+      },
+      "TWSHBZS": {
+        "hierarchy": 2000,
+        "commercialFareFamily": "BZCLASS",
+        "cabin": "business"
+      },
+      "TWSHECB": {
+        "hierarchy": 8000,
+        "commercialFareFamily": "ECONEW",
+        "cabin": "eco"
+      },
+      "TWSHECS": {
+        "hierarchy": 7500,
+        "commercialFareFamily": "ECONEW",
+        "cabin": "eco"
+      },
+      "TWSHECD": {
+        "hierarchy": 9000,
+        "commercialFareFamily": "ECONEW",
+        "cabin": "eco"
+      }
+    },
+    "bookingStatus": {
+      "HK": {
+        "name": "Holding confirmed"
+      }
+    },
+    "fareConditions": {
+      "PEN9": {
+        "category": "refund",
+        "situation": "beforeDeparture",
+        "details": [
+          {
+            "descriptionCode": "BDJ",
+            "defaultDescription": "isReFundAllowed",
+            "isAllowed": true,
+            "penalty": {
+              "code": "BDT",
+              "description": "refundPenalty",
+              "price": {
+                "total": 3300,
+                "currencyCode": "TWD",
+                "totalTaxes": 0
+              }
+            }
+          }
+        ]
+      },
+      "PEN18": {
+        "category": "refund",
+        "situation": "beforeDeparture",
+        "details": [
+          {
+            "descriptionCode": "BDJ",
+            "defaultDescription": "isReFundAllowed",
+            "isAllowed": true,
+            "penalty": {
+              "code": "BDT",
+              "description": "refundPenalty",
+              "price": {
+                "total": 4500,
+                "currencyCode": "TWD",
+                "totalTaxes": 0
+              }
+            }
+          }
+        ]
+      },
+      "PEN6": {
+        "category": "refund",
+        "situation": "beforeDeparture",
+        "details": [
+          {
+            "descriptionCode": "BDJ",
+            "defaultDescription": "isReFundAllowed",
+            "isAllowed": true,
+            "penalty": {
+              "code": "BDT",
+              "description": "refundPenalty",
+              "price": {
+                "total": 4500,
+                "currencyCode": "TWD",
+                "totalTaxes": 0
+              }
+            }
+          }
+        ]
+      },
+      "PEN17": {
+        "category": "change",
+        "situation": "beforeDeparture",
+        "details": [
+          {
+            "descriptionCode": "BDJ",
+            "defaultDescription": "isReIssueAllowed",
+            "isAllowed": true,
+            "penalty": {
+              "code": "BDT",
+              "description": "changePenalty",
+              "price": {
+                "total": 1500,
+                "currencyCode": "TWD",
+                "totalTaxes": 0
+              }
+            }
+          }
+        ]
+      },
+      "PEN5": {
+        "category": "change",
+        "situation": "beforeDeparture",
+        "details": [
+          {
+            "descriptionCode": "BDJ",
+            "defaultDescription": "isReIssueAllowed",
+            "isAllowed": true,
+            "penalty": {
+              "code": "BDT",
+              "description": "changePenalty",
+              "price": {
+                "total": 2300,
+                "currencyCode": "TWD",
+                "totalTaxes": 0
+              }
+            }
+          }
+        ]
+      },
+      "PEN16": {
+        "category": "change",
+        "situation": "beforeDeparture",
+        "details": [
+          {
+            "descriptionCode": "RVJ",
+            "defaultDescription": "isRevalidationAllowed",
+            "isAllowed": false
+          }
+        ]
+      },
+      "PEN8": {
+        "category": "change",
+        "situation": "beforeDeparture",
+        "details": [
+          {
+            "descriptionCode": "BDJ",
+            "defaultDescription": "isReIssueAllowed",
+            "isAllowed": true,
+            "penalty": {
+              "code": "BDT",
+              "description": "changePenalty",
+              "price": {
+                "total": 1300,
+                "currencyCode": "TWD",
+                "totalTaxes": 0
+              }
+            }
+          }
+        ]
+      },
+      "PEN15": {
+        "category": "refund",
+        "situation": "beforeDeparture",
+        "details": [
+          {
+            "descriptionCode": "BDJ",
+            "defaultDescription": "isReFundAllowed",
+            "isAllowed": true,
+            "penalty": {
+              "code": "BDT",
+              "description": "refundPenalty",
+              "price": {
+                "total": 6000,
+                "currencyCode": "TWD",
+                "totalTaxes": 0
+              }
+            }
+          }
+        ]
+      },
+      "PEN7": {
+        "category": "change",
+        "situation": "beforeDeparture",
+        "details": [
+          {
+            "descriptionCode": "RVJ",
+            "defaultDescription": "isRevalidationAllowed",
+            "isAllowed": false
+          }
+        ]
+      },
+      "PEN14": {
+        "category": "change",
+        "situation": "beforeDeparture",
+        "details": [
+          {
+            "descriptionCode": "BDJ",
+            "defaultDescription": "isReIssueAllowed",
+            "isAllowed": true,
+            "penalty": {
+              "code": "BDT",
+              "description": "changePenalty",
+              "price": {
+                "total": 2500,
+                "currencyCode": "TWD",
+                "totalTaxes": 0
+              }
+            }
+          }
+        ]
+      },
+      "PEN2": {
+        "category": "change",
+        "situation": "beforeDeparture",
+        "details": [
+          {
+            "descriptionCode": "BDJ",
+            "defaultDescription": "isReIssueAllowed",
+            "isAllowed": true,
+            "penalty": {
+              "code": "BDT",
+              "description": "changePenalty",
+              "price": {
+                "total": 3000,
+                "currencyCode": "TWD",
+                "totalTaxes": 0
+              }
+            }
+          }
+        ]
+      },
+      "PEN13": {
+        "category": "change",
+        "situation": "beforeDeparture",
+        "details": [
+          {
+            "descriptionCode": "RVJ",
+            "defaultDescription": "isRevalidationAllowed",
+            "isAllowed": false
+          }
+        ]
+      },
+      "PEN1": {
+        "category": "change",
+        "situation": "beforeDeparture",
+        "details": [
+          {
+            "descriptionCode": "RVJ",
+            "defaultDescription": "isRevalidationAllowed",
+            "isAllowed": false
+          }
+        ]
+      },
+      "PEN12": {
+        "category": "refund",
+        "situation": "beforeDeparture",
+        "details": [
+          {
+            "descriptionCode": "BDJ",
+            "defaultDescription": "isReFundAllowed",
+            "isAllowed": true,
+            "penalty": {
+              "code": "BDT",
+              "description": "refundPenalty",
+              "price": {
+                "total": 1500,
+                "currencyCode": "TWD",
+                "totalTaxes": 0
+              }
+            }
+          }
+        ]
+      },
+      "PEN4": {
+        "category": "change",
+        "situation": "beforeDeparture",
+        "details": [
+          {
+            "descriptionCode": "RVJ",
+            "defaultDescription": "isRevalidationAllowed",
+            "isAllowed": false
+          }
+        ]
+      },
+      "PEN11": {
+        "category": "change",
+        "situation": "beforeDeparture",
+        "details": [
+          {
+            "descriptionCode": "BDJ",
+            "defaultDescription": "isReIssueAllowed",
+            "isAllowed": true,
+            "penalty": {
+              "code": "BDT",
+              "description": "changePenalty",
+              "price": {
+                "total": 0,
+                "currencyCode": "TWD",
+                "totalTaxes": 0
+              }
+            }
+          }
+        ]
+      },
+      "PEN3": {
+        "category": "refund",
+        "situation": "beforeDeparture",
+        "details": [
+          {
+            "descriptionCode": "BDJ",
+            "defaultDescription": "isReFundAllowed",
+            "isAllowed": false
+          }
+        ]
+      },
+      "PEN10": {
+        "category": "change",
+        "situation": "beforeDeparture",
+        "details": [
+          {
+            "descriptionCode": "RVJ",
+            "defaultDescription": "isRevalidationAllowed",
+            "isAllowed": false
+          }
+        ]
+      }
+    },
+    "service": {
+      "FBA1-C0GOC1": {
+        "marketingAirlineCode": "CI",
+        "serviceType": "freeCheckedBaggage",
+        "baggagePolicyDescriptions": [
+          {
+            "type": "piece",
+            "quantity": 1,
+            "baggageCharacteristics": [
+              {
+                "description": "UPTO50LB 23KG AND62LI 158LCM",
+                "policyDetails": [
+                  {
+                    "type": "weight",
+                    "qualifier": "upTo",
+                    "value": "23",
+                    "unit": "kilogram"
+                  },
+                  {
+                    "type": "weight",
+                    "qualifier": "upTo",
+                    "value": "50",
+                    "unit": "pound"
+                  },
+                  {
+                    "type": "size",
+                    "qualifier": "upTo",
+                    "value": "158",
+                    "unit": "centimeter"
+                  },
+                  {
+                    "type": "size",
+                    "qualifier": "upTo",
+                    "value": "62",
+                    "unit": "inch"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "FBA3-C0FMC2": {
+        "marketingAirlineCode": "CI",
+        "serviceType": "freeCheckedBaggage",
+        "baggagePolicyDescriptions": [
+          {
+            "type": "piece",
+            "quantity": 2,
+            "baggageCharacteristics": [
+              {
+                "description": "UPTO70LB 32KG AND62LI 158LCM",
+                "policyDetails": [
+                  {
+                    "type": "weight",
+                    "qualifier": "upTo",
+                    "value": "32",
+                    "unit": "kilogram"
+                  },
+                  {
+                    "type": "weight",
+                    "qualifier": "upTo",
+                    "value": "70",
+                    "unit": "pound"
+                  },
+                  {
+                    "type": "size",
+                    "qualifier": "upTo",
+                    "value": "158",
+                    "unit": "centimeter"
+                  },
+                  {
+                    "type": "size",
+                    "qualifier": "upTo",
+                    "value": "62",
+                    "unit": "inch"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "FBA2-C0GOC1": {
+        "marketingAirlineCode": "CI",
+        "serviceType": "freeCheckedBaggage",
+        "baggagePolicyDescriptions": [
+          {
+            "type": "piece",
+            "quantity": 2,
+            "baggageCharacteristics": [
+              {
+                "description": "UPTO50LB 23KG AND62LI 158LCM",
+                "policyDetails": [
+                  {
+                    "type": "weight",
+                    "qualifier": "upTo",
+                    "value": "23",
+                    "unit": "kilogram"
+                  },
+                  {
+                    "type": "weight",
+                    "qualifier": "upTo",
+                    "value": "50",
+                    "unit": "pound"
+                  },
+                  {
+                    "type": "size",
+                    "qualifier": "upTo",
+                    "value": "158",
+                    "unit": "centimeter"
+                  },
+                  {
+                    "type": "size",
+                    "qualifier": "upTo",
+                    "value": "62",
+                    "unit": "inch"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,14 +1,21 @@
-import { MCPServer, object, text, widget } from "mcp-use/server";
+import { MCPServer, error, object, text, widget } from "mcp-use/server";
+import { flightSearchParamsSchema } from "./src/schemas/flight.js";
+import { pointsListingSearchParamsSchema } from "./src/schemas/points-listing.js";
+import { createProvider, createPointsListingProvider, createAwardProvider } from "./src/providers/registry.js";
+import { UnifiedFlightSearchService } from "./src/services/unified-flight-search-service.js";
+import { PointsListingService } from "./src/services/points-listing-service.js";
+import { loginDynastyFlyer } from "./lib/china-airlines-award/index.js";
 import { z } from "zod";
 
 const server = new MCPServer({
   name: "yc-mcp-hack",
-  title: "yc-mcp-hack", // display name
+  title: "Flight Price Comparison",
   version: "1.0.0",
-  description: "MCP server with MCP Apps integration",
-  baseUrl: process.env.MCP_URL || "http://localhost:3000", // Full base URL (e.g., https://myserver.com)
+  description:
+    "Compare airline ticket prices: cash vs miles/points with cents-per-point analysis",
+  baseUrl: process.env.MCP_URL || "http://localhost:3000",
   favicon: "favicon.ico",
-  websiteUrl: "https://mcp-use.com", // Can be customized later
+  websiteUrl: "https://mcp-use.com",
   icons: [
     {
       src: "icon.svg",
@@ -18,91 +25,158 @@ const server = new MCPServer({
   ],
 });
 
-/**
- * TOOL THAT RETURNS A WIDGET
- * The `widget` config tells mcp-use which widget component to render.
- * The `widget()` helper in the handler passes props to that component.
- * Docs: https://mcp-use.com/docs/typescript/server/mcp-apps
- */
+const provider = createProvider();
+const awardProvider = createAwardProvider();
+const pointsProvider = createPointsListingProvider();
 
-// Fruits data — color values are Tailwind bg-[] classes used by the carousel UI
-const fruits = [
-  { fruit: "mango", color: "bg-[#FBF1E1] dark:bg-[#FBF1E1]/10" },
-  { fruit: "pineapple", color: "bg-[#f8f0d9] dark:bg-[#f8f0d9]/10" },
-  { fruit: "cherries", color: "bg-[#E2EDDC] dark:bg-[#E2EDDC]/10" },
-  { fruit: "coconut", color: "bg-[#fbedd3] dark:bg-[#fbedd3]/10" },
-  { fruit: "apricot", color: "bg-[#fee6ca] dark:bg-[#fee6ca]/10" },
-  { fruit: "blueberry", color: "bg-[#e0e6e6] dark:bg-[#e0e6e6]/10" },
-  { fruit: "grapes", color: "bg-[#f4ebe2] dark:bg-[#f4ebe2]/10" },
-  { fruit: "watermelon", color: "bg-[#e6eddb] dark:bg-[#e6eddb]/10" },
-  { fruit: "orange", color: "bg-[#fdebdf] dark:bg-[#fdebdf]/10" },
-  { fruit: "avocado", color: "bg-[#ecefda] dark:bg-[#ecefda]/10" },
-  { fruit: "apple", color: "bg-[#F9E7E4] dark:bg-[#F9E7E4]/10" },
-  { fruit: "pear", color: "bg-[#f1f1cf] dark:bg-[#f1f1cf]/10" },
-  { fruit: "plum", color: "bg-[#ece5ec] dark:bg-[#ece5ec]/10" },
-  { fruit: "banana", color: "bg-[#fdf0dd] dark:bg-[#fdf0dd]/10" },
-  { fruit: "strawberry", color: "bg-[#f7e6df] dark:bg-[#f7e6df]/10" },
-  { fruit: "lemon", color: "bg-[#feeecd] dark:bg-[#feeecd]/10" },
-];
+const unifiedService = new UnifiedFlightSearchService(provider, awardProvider, pointsProvider);
+const pointsService = new PointsListingService(pointsProvider);
 
 server.tool(
   {
-    name: "search-tools",
-    description: "Search for fruits and display the results in a visual widget",
-    schema: z.object({
-      query: z.string().optional().describe("Search query to filter fruits"),
-    }),
+    name: "search-flights",
+    description:
+      "Search for flights and compare cash prices vs miles/points with cents-per-point (CPP) value analysis. Returns a visual comparison table.",
+    schema: flightSearchParamsSchema,
     widget: {
-      name: "product-search-result",
-      invoking: "Searching...",
+      name: "flight-search-result",
+      invoking: "Searching flights...",
       invoked: "Results loaded",
     },
   },
-  async ({ query }) => {
-    const results = fruits.filter(
-      (f) => !query || f.fruit.toLowerCase().includes(query.toLowerCase())
-    );
+  async (params) => {
+    try {
+      const result = await unifiedService.search(params);
 
-    // let's emulate a delay to show the loading state
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
-    return widget({
-      props: { query: query ?? "", results },
-      output: text(
-        `Found ${results.length} fruits matching "${query ?? "all"}"`
-      ),
-    });
+      return widget({
+        props: result,
+        output: text(
+          `Found ${result.flights.length} flights from ${params.origin} to ${params.destination} on ${params.departDate} — comparing cash, miles, and buy-miles pricing (provider: ${result.provider})`
+        ),
+      });
+    } catch (err) {
+      console.error("Flight search failed:", err);
+      return error(
+        `Flight search failed: ${err instanceof Error ? err.message : "Unknown error"}`
+      );
+    }
   }
 );
 
 server.tool(
   {
-    name: "get-fruit-details",
-    description: "Get detailed information about a specific fruit",
+    name: "get-flight-details",
+    description: "Get detailed information about a specific flight by ID",
     schema: z.object({
-      fruit: z.string().describe("The fruit name"),
+      flightId: z.string().describe("The flight ID from search results"),
     }),
-    outputSchema: z.object({
-      fruit: z.string(),
-      color: z.string(),
-      facts: z.array(z.string()),
-    }),
+    annotations: {
+      readOnlyHint: true,
+    },
   },
-  async ({ fruit }) => {
-    const found = fruits.find(
-      (f) => f.fruit?.toLowerCase() === fruit?.toLowerCase()
-    );
-    return object({
-      fruit: found?.fruit ?? fruit,
-      color: found?.color ?? "unknown",
-      facts: [
-        `${fruit} is a delicious fruit`,
-        `Color: ${found?.color ?? "unknown"}`,
-      ],
-    });
+  async ({ flightId }) => {
+    const flight = unifiedService.getFlightById(flightId);
+
+    if (!flight) {
+      return error(
+        `Flight not found: ${flightId}. Try searching for flights first.`
+      );
+    }
+
+    return object(flight);
+  }
+);
+
+server.tool(
+  {
+    name: "search-points-listings",
+    description:
+      "Search the PointsBazaar P2P marketplace for airline miles listings. Shows available miles for purchase with price per mile, seller ratings, and total cost. Use this to help users find the best deals on buying airline miles.",
+    schema: pointsListingSearchParamsSchema,
+    widget: {
+      name: "points-listing-result",
+      invoking: "Searching PointsBazaar...",
+      invoked: "Listings loaded",
+    },
+  },
+  async (params) => {
+    try {
+      const result = await pointsService.search(params);
+
+      const airlineLabel = params.airline || "all airlines";
+      return widget({
+        props: result,
+        output: text(
+          `Found ${result.listings.length} listings for ${airlineLabel} on PointsBazaar (provider: ${result.provider})`
+        ),
+      });
+    } catch (err) {
+      console.error("Points listing search failed:", err);
+      return error(
+        `Points listing search failed: ${err instanceof Error ? err.message : "Unknown error"}`
+      );
+    }
+  }
+);
+
+server.tool(
+  {
+    name: "get-listing-details",
+    description:
+      "Get detailed information about a specific PointsBazaar listing by ID",
+    schema: z.object({
+      listingId: z
+        .string()
+        .describe("The listing ID from search results"),
+    }),
+    annotations: {
+      readOnlyHint: true,
+    },
+  },
+  async ({ listingId }) => {
+    const listing = pointsService.getListingById(listingId);
+
+    if (!listing) {
+      return error(
+        `Listing not found: ${listingId}. Try searching for listings first.`
+      );
+    }
+
+    return object(listing);
+  }
+);
+
+server.tool(
+  {
+    name: "dynasty-flyer-login",
+    description:
+      "Log in to Dynasty Flyer (China Airlines loyalty program) to enable award flight searches. Opens a browser session for you to complete login with email verification. Run this once — the session persists across searches.",
+    schema: z.object({}),
+  },
+  async () => {
+    try {
+      const result = await loginDynastyFlyer();
+
+      if (result.success) {
+        return text(
+          `Login successful!\n\n` +
+            `Debug URL: ${result.debugUrl}\n` +
+            `Context ID: ${result.contextId}\n\n` +
+            `To persist this session, set DYNASTY_FLYER_CONTEXT_ID=${result.contextId} in your .env file.\n\n` +
+            `Award flight data will now be included in search-flights results.`
+        );
+      }
+
+      return error(`Dynasty Flyer login failed: ${result.message}`);
+    } catch (err) {
+      console.error("Dynasty Flyer login failed:", err);
+      return error(
+        `Dynasty Flyer login failed: ${err instanceof Error ? err.message : "Unknown error"}`
+      );
+    }
   }
 );
 
 server.listen().then(() => {
-  console.log(`Server running`);
+  console.log("Server running");
 });
