@@ -55,7 +55,7 @@ export async function searchFlights(
       saveDebugResponses(interceptor.responses);
 
       // Parse results
-      const outbound = await parseFlightResults(page, interceptor.responses);
+      const outbound = await parseFlightResults(page, interceptor.responses, input.cabinClass);
 
       // Enrich segment airports from input if missing
       for (const flight of outbound) {

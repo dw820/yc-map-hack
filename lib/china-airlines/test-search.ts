@@ -8,7 +8,7 @@
  *   CHINA_AIRLINES_CONTEXT_ID (optional, auto-created if missing)
  */
 
-import { readFileSync, writeFileSync } from "fs";
+import { readFileSync } from "fs";
 import { resolve } from "path";
 
 // Load .env from project root
@@ -31,41 +31,14 @@ try {
 }
 
 import { searchFlights } from "./index.js";
-import { BrowserSessionManager } from "./browser-session.js";
 
 const TEST_INPUT = {
-  origin: "TPE",
-  destination: "NRT",
-  departureDate: "2026-04-15",
-  cabinClass: "economy" as const,
+  origin: "SFO",
+  destination: "TPE",
+  departureDate: "2027-02-17",
+  cabinClass: "business" as const,
   adults: 1,
 };
-
-/** Write the auto-created context ID back to .env so future runs reuse it */
-async function saveContextId() {
-  const manager = BrowserSessionManager.getInstance();
-  const contextId = manager.lastCreatedContextId;
-  if (!contextId) return;
-
-  try {
-    let envContent = readFileSync(envPath, "utf-8");
-    if (envContent.includes(`CHINA_AIRLINES_CONTEXT_ID=${contextId}`)) return;
-
-    // Replace empty value or update existing
-    if (envContent.includes("CHINA_AIRLINES_CONTEXT_ID=")) {
-      envContent = envContent.replace(
-        /CHINA_AIRLINES_CONTEXT_ID=.*/,
-        `CHINA_AIRLINES_CONTEXT_ID=${contextId}`
-      );
-    } else {
-      envContent += `\nCHINA_AIRLINES_CONTEXT_ID=${contextId}\n`;
-    }
-    writeFileSync(envPath, envContent);
-    console.log(`\n[test] Saved CHINA_AIRLINES_CONTEXT_ID=${contextId} to .env`);
-  } catch (e) {
-    console.warn(`[test] Could not save context ID to .env: ${e}`);
-  }
-}
 
 async function main() {
   console.log("=== China Airlines Flight Search Test ===");
@@ -84,6 +57,8 @@ async function main() {
   }
 
   try {
+    // Force a fresh browser context (don't reuse potentially-stale one from .env)
+    delete process.env.CHINA_AIRLINES_CONTEXT_ID;
     const result = await searchFlights(TEST_INPUT);
 
     console.log(`\n=== Results: ${result.resultCount} flights found ===\n`);
@@ -110,11 +85,7 @@ async function main() {
 
     console.log(`Timestamp: ${result.timestamp}`);
 
-    // Save context ID to .env if it was auto-created
-    await saveContextId();
   } catch (err) {
-    // Still try to save context ID even on failure
-    await saveContextId().catch(() => {});
     console.error("\n=== Search Failed ===");
     if (err instanceof Error) {
       console.error(`Error: ${err.message}`);

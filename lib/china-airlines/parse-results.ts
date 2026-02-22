@@ -70,7 +70,8 @@ export function saveDebugResponses(
  * Returns null if no usable data found — caller should fall back to DOM parsing.
  */
 export function parseInterceptedData(
-  responses: Array<{ url: string; data: unknown }>
+  responses: Array<{ url: string; data: unknown }>,
+  cabinClass?: string
 ): FlightOption[] | null {
   if (responses.length === 0) return null;
 
@@ -80,7 +81,7 @@ export function parseInterceptedData(
   );
   if (airBoundsResp) {
     try {
-      const flights = parseChinaAirlinesAirBounds(airBoundsResp.data);
+      const flights = parseChinaAirlinesAirBounds(airBoundsResp.data, cabinClass);
       if (flights && flights.length > 0) {
         console.log(
           `[parse-results] Extracted ${flights.length} flights from air-bounds API`
@@ -165,8 +166,18 @@ interface FlightDictEntry {
   duration?: number;
 }
 
+/** Map our cabin class names to the air-bounds API cabin codes */
+const CABIN_CODE_MAP: Record<string, string> = {
+  economy: "eco",
+  "premium-economy": "ecoPremium",
+  business: "business",
+};
+
 /** Parse the China Airlines /v2/search/air-bounds API response */
-function parseChinaAirlinesAirBounds(raw: unknown): FlightOption[] | null {
+function parseChinaAirlinesAirBounds(
+  raw: unknown,
+  cabinClass?: string
+): FlightOption[] | null {
   const resp = raw as AirBoundsResponse;
   const groups = resp?.data?.airBoundGroups;
   if (!Array.isArray(groups) || groups.length === 0) return null;
@@ -176,14 +187,29 @@ function parseChinaAirlinesAirBounds(raw: unknown): FlightOption[] | null {
   const aircraftDict = resp?.dictionaries?.aircraft ?? {};
   const flights: FlightOption[] = [];
 
+  // Map requested cabin class to API cabin code
+  const targetCabin = cabinClass ? CABIN_CODE_MAP[cabinClass] : undefined;
+
   for (const group of groups) {
     const bd = group.boundDetails;
     if (!bd?.segments?.length) continue;
 
-    // Find the cheapest economy fare (or just the cheapest overall)
-    const cheapest =
-      group.airBounds?.find((ab) => ab.isCheapestOffer) ??
-      group.airBounds?.[0];
+    // Find the cheapest fare matching the requested cabin, or cheapest overall
+    let cheapest: AirBound | undefined;
+    if (targetCabin) {
+      cheapest = group.airBounds?.find(
+        (ab) =>
+          ab.availabilityDetails?.[0]?.cabin === targetCabin &&
+          ab.isCheapestOffer
+      ) ?? group.airBounds?.find(
+        (ab) => ab.availabilityDetails?.[0]?.cabin === targetCabin
+      );
+    }
+    if (!cheapest) {
+      cheapest =
+        group.airBounds?.find((ab) => ab.isCheapestOffer) ??
+        group.airBounds?.[0];
+    }
 
     // Build segments from dictionaries
     const segments = bd.segments
@@ -223,9 +249,10 @@ function parseChinaAirlinesAirBounds(raw: unknown): FlightOption[] | null {
 
     if (segments.length === 0) continue;
 
-    // Price from cheapest fare
+    // Price from cheapest fare (API returns cents, convert to dollars)
     const priceData = cheapest?.prices?.totalPrices?.[0];
-    const amount = priceData?.total;
+    const rawAmount = priceData?.total;
+    const amount = rawAmount != null ? rawAmount / 100 : undefined;
     const currency = priceData?.currencyCode ?? "TWD";
 
     // Cabin from availability details
@@ -475,10 +502,11 @@ export async function parseDomResults(page: Page): Promise<FlightOption[]> {
 /** Main parse function: tries intercepted API data first, falls back to DOM */
 export async function parseFlightResults(
   page: Page,
-  interceptedResponses: Array<{ url: string; data: unknown }>
+  interceptedResponses: Array<{ url: string; data: unknown }>,
+  cabinClass?: string
 ): Promise<FlightOption[]> {
   // Try API interception first
-  const apiFlights = parseInterceptedData(interceptedResponses);
+  const apiFlights = parseInterceptedData(interceptedResponses, cabinClass);
   if (apiFlights && apiFlights.length > 0) {
     return apiFlights;
   }

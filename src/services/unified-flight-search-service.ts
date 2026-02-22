@@ -30,6 +30,10 @@ function enrichWithCpp(flight: FlightResult): FlightResult {
   };
 }
 
+function normalizeFlightNumber(fn: string): string {
+  return fn.replace(/\s+/g, "").toUpperCase();
+}
+
 function mergeFlights(
   cashFlights: FlightResult[],
   awardFlights: FlightResult[]
@@ -38,9 +42,11 @@ function mergeFlights(
     // If cash flight already has miles data (e.g. mock mode), keep it
     if (cash.milesPrice != null) return cash;
 
-    // Find matching award flight by flightNumber + departDate
+    // Find matching award flight by normalized flightNumber + departDate
     const award = awardFlights.find(
-      (a) => a.flightNumber === cash.flightNumber && a.departDate === cash.departDate
+      (a) =>
+        normalizeFlightNumber(a.flightNumber) === normalizeFlightNumber(cash.flightNumber) &&
+        a.departDate === cash.departDate
     );
 
     if (!award || award.milesPrice == null) return cash;
@@ -121,7 +127,10 @@ export class UnifiedFlightSearchService {
       return cached.data;
     }
 
-    // Call all 3 providers in parallel, gracefully degrade on failure
+    // All 3 providers in parallel:
+    // - Cash: creates its own Browserbase session
+    // - Award: reconnects to existing keepAlive session
+    // - Points: uses Firecrawl (no Browserbase)
     const [cashFlights, awardFlights, listings] = await Promise.all([
       this.cashProvider.search(params),
       this.awardProvider.search(params).catch((err) => {

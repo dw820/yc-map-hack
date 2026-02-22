@@ -78,6 +78,7 @@ export class BrowserSessionManager {
     console.log("[browser-session] Creating Browserbase session...");
     const session = await this.bb.sessions.create({
       projectId: this.projectId,
+      proxies: true,
       browserSettings: {
         context: { id: contextId, persist: true },
         blockAds: true,

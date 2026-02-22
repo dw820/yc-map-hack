@@ -266,9 +266,14 @@ export async function parseDomAwardResults(page: Page): Promise<AwardFlightOptio
 
   const flights: AwardFlightOption[] = [];
 
-  // Extract miles amounts: "25,000 miles", "25000 Miles", etc.
-  const milesPattern = /([\d,]+)\s*(?:miles?|哩程)/gi;
-  const milesMatches = [...bodyText.matchAll(milesPattern)];
+  // Extract miles amounts: "25,000 miles", "25000 Miles", "MILES 80,000", etc.
+  const milesPattern = /(?:(?:miles?|哩程)\s*([\d,]+)|([\d,]+)\s*(?:miles?|哩程))/gi;
+  const milesMatchesRaw = [...bodyText.matchAll(milesPattern)];
+  // Normalize: pick whichever capture group matched
+  const milesMatches = milesMatchesRaw.map((m) => {
+    const digits = m[1] || m[2];
+    return [m[0], digits] as [string, string];
+  });
 
   // Extract tax amounts: "USD 50.00", "$50", "US$50.00"
   const taxPattern = /(?:USD|US\$|\$)\s*([\d,]+(?:\.\d{2})?)/g;
