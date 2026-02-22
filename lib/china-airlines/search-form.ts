@@ -206,29 +206,42 @@ async function selectCabinClass(page: Page, cabinClass: string): Promise<void> {
 }
 
 /** Click the search button and wait for navigation/results */
-async function submitSearch(page: Page): Promise<void> {
+async function submitSearch(page: Page, dataReady?: Promise<void>): Promise<void> {
   console.log("[search-form] Submitting search...");
 
   const searchBtn = page.locator(SELECTORS.searchButton);
   await searchBtn.click();
 
-  // Wait for navigation to results page or network idle
   console.log("[search-form] Waiting for results page...");
-  try {
-    await page.waitForURL("**/FlightSearchResults**", {
+
+  const urlChanged = page
+    .waitForURL("**/FlightSearchResults**", {
       timeout: TIMEOUTS.searchResults,
       waitUntil: "domcontentloaded",
-    });
-    console.log("[search-form] Arrived at results page");
-  } catch {
+    })
+    .then(() => "url" as const)
+    .catch(() => "timeout" as const);
+
+  const apiReady = dataReady
+    ? dataReady.then(() => "api" as const)
+    : new Promise<never>(() => {}); // never resolves if no dataReady
+
+  const winner = await Promise.race([urlChanged, apiReady]);
+
+  if (winner === "api") {
+    console.log("[search-form] API data intercepted — short settle");
+    await new Promise((r) => setTimeout(r, 1000));
+  } else if (winner === "url") {
+    console.log("[search-form] Arrived at results page — standard settle");
+    await new Promise((r) => setTimeout(r, 5000));
+  } else {
+    // timeout fallback
     console.log("[search-form] No URL change detected, waiting for network idle...");
     await page
       .waitForLoadState("networkidle", { timeout: TIMEOUTS.searchResults })
       .catch(() => {});
+    await new Promise((r) => setTimeout(r, 5000));
   }
-
-  // Extra wait for dynamic content to render
-  await new Promise((r) => setTimeout(r, 5000));
 
   // Debug: capture results page screenshot and HTML
   try {
@@ -252,7 +265,8 @@ async function submitSearch(page: Page): Promise<void> {
 /** Full search form flow: navigate, fill, submit */
 export async function fillAndSubmitSearchForm(
   page: Page,
-  input: FlightSearchInput
+  input: FlightSearchInput,
+  dataReady?: Promise<void>
 ): Promise<void> {
   await navigateToSite(page);
   await selectOneWay(page);
@@ -262,5 +276,5 @@ export async function fillAndSubmitSearchForm(
   if (input.cabinClass !== "economy") {
     await selectCabinClass(page, input.cabinClass);
   }
-  await submitSearch(page);
+  await submitSearch(page, dataReady);
 }

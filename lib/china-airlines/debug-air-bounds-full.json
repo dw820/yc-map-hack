@@ -16,7 +16,7 @@
         },
         "airBounds": [
           {
-            "airBoundId": "BC1-1-1I0CIZ_ERHHP8JZY5MLE74X05B18EJUZ81X",
+            "airBoundId": "BC1-1-1I1CIZ_HBBL8DQSTXS5WPSEPY3LEF72QXBA",
             "fareFamilyCode": "USWWECB",
             "isCheapestOffer": true,
             "availabilityDetails": [
@@ -162,7 +162,7 @@
             ]
           },
           {
-            "airBoundId": "BC1-1-1I0CIZ_A8GMVVTGKQ1IRBMUSBZWEK36VUFZ",
+            "airBoundId": "BC1-1-1I1CIZ_3UY2ZIV5SDUAEWHI2GJDCXAG9MWQ",
             "fareFamilyCode": "USWWECS",
             "availabilityDetails": [
               {
@@ -307,7 +307,7 @@
             ]
           },
           {
-            "airBoundId": "BC1-1-1I0CIZ_AZVR7J89LFPI4J86MQSZHDAT61HI",
+            "airBoundId": "BC1-1-1I1CIZ_EO9B1DLG1XLCLP0VNZCMG3T37MJH",
             "fareFamilyCode": "USWWECF",
             "availabilityDetails": [
               {
@@ -452,7 +452,7 @@
             ]
           },
           {
-            "airBoundId": "BC1-1-1I0CIZ_F38A3FDBVURHR466H4F4YF3L9742",
+            "airBoundId": "BC1-1-1I1CIZ_SFIPL2ZT4FM71C352JNHK4GZWJC7",
             "fareFamilyCode": "USWWPECB",
             "availabilityDetails": [
               {
@@ -597,7 +597,7 @@
             ]
           },
           {
-            "airBoundId": "BC1-1-1I0CIZ_DG0CVCJ1INQUZ0KBMG500TPL4IZC",
+            "airBoundId": "BC1-1-1I1CIZ_IHVSKCQNB3XY6PBEFHNQEPQPFP2G",
             "fareFamilyCode": "USWWPECS",
             "availabilityDetails": [
               {
@@ -742,7 +742,7 @@
             ]
           },
           {
-            "airBoundId": "BC1-1-1I0CIZ_H5UORWZT45F4S5NQJHX638G2FEF5",
+            "airBoundId": "BC1-1-1I1CIZ_QIT7680UBDCJMKC373WNGXG353VI",
             "fareFamilyCode": "USWWPECF",
             "availabilityDetails": [
               {
@@ -887,7 +887,7 @@
             ]
           },
           {
-            "airBoundId": "BC1-1-1I0CIZ_BFGE9GEU5JRLGJ03KR00Y5GT46JS",
+            "airBoundId": "BC1-1-1I1CIZ_C1W2AJH7JWQ18NA73P1RGGOZQ9WG",
             "fareFamilyCode": "USWWBZB",
             "availabilityDetails": [
               {
@@ -1032,7 +1032,7 @@
             ]
           },
           {
-            "airBoundId": "BC1-1-1I0CIZ_XED89OP193ODG7GBLC9IHLYWW8VF",
+            "airBoundId": "BC1-1-1I1CIZ_IXLIS2AQFDBKSV0XQGOPQ6FI9CMI",
             "fareFamilyCode": "USWWBZS",
             "availabilityDetails": [
               {
@@ -1177,7 +1177,7 @@
             ]
           },
           {
-            "airBoundId": "BC1-1-1I0CIZ_RVXUV22ESBLL9KRG2TYJ03I6G3UY",
+            "airBoundId": "BC1-1-1I1CIZ_5CN3AAL8O7BMSVWZ2MTYAU5BST1K",
             "fareFamilyCode": "USWWBZF",
             "availabilityDetails": [
               {
@@ -1421,15 +1421,15 @@
         "commercialFareFamily": "BZCLASS",
         "cabin": "business"
       },
-      "USWWPECB": {
-        "hierarchy": 6000,
-        "commercialFareFamily": "PREMIUMECO",
-        "cabin": "ecoPremium"
-      },
       "USWWECF": {
         "hierarchy": 7000,
         "commercialFareFamily": "ECONEW",
         "cabin": "eco"
+      },
+      "USWWPECB": {
+        "hierarchy": 6000,
+        "commercialFareFamily": "PREMIUMECO",
+        "cabin": "ecoPremium"
       },
       "USWWPECS": {
         "hierarchy": 5000,

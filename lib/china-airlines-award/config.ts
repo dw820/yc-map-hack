@@ -28,7 +28,7 @@ export const TIMEOUTS = {
   loginPolling: 300_000, // 5 minutes for manual login
   loginPollInterval: 5_000,
   awardPageNavigation: 30_000,
-  browserbaseSessionTimeout: 3_600, // 1 hour in seconds (max 6 hours = 21600)
+  browserbaseSessionTimeout: 21_600, // 6 hours in seconds (max allowed by Browserbase)
 } as const;
 
 export const DELAYS = {

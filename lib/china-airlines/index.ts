@@ -49,7 +49,7 @@ export async function searchFlights(
       interceptor.start();
 
       // Fill and submit search form
-      await fillAndSubmitSearchForm(page, input);
+      await fillAndSubmitSearchForm(page, input, interceptor.dataReady);
 
       // Save all intercepted responses for debugging
       saveDebugResponses(interceptor.responses);

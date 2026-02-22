@@ -44,9 +44,16 @@ server.tool(
       invoked: "Results loaded",
     },
   },
-  async (params) => {
+  async (params, ctx) => {
+    let step = 0;
+    const progressInterval = setInterval(async () => {
+      step++;
+      await ctx.reportProgress?.(step, 0, "Searching flights...");
+    }, 5_000);
+
     try {
       const result = await unifiedService.search(params);
+      clearInterval(progressInterval);
 
       return widget({
         props: result,
@@ -55,6 +62,7 @@ server.tool(
         ),
       });
     } catch (err) {
+      clearInterval(progressInterval);
       console.error("Flight search failed:", err);
       return error(
         `Flight search failed: ${err instanceof Error ? err.message : "Unknown error"}`

@@ -9,12 +9,15 @@ const DEBUG_DIR = resolve(import.meta.dirname);
 /** Intercepted API responses collected during the search */
 export interface NetworkInterceptor {
   responses: Array<{ url: string; data: unknown }>;
+  dataReady: Promise<void>; // resolves when air-bounds API responds
   start: () => void;
 }
 
 /** Set up network interception to capture flight search API calls */
 export function createNetworkInterceptor(page: Page): NetworkInterceptor {
   const responses: Array<{ url: string; data: unknown }> = [];
+  let resolveDataReady: () => void;
+  const dataReady = new Promise<void>((r) => { resolveDataReady = r; });
 
   const start = () => {
     page.on("response", async (response) => {
@@ -39,13 +42,14 @@ export function createNetworkInterceptor(page: Page): NetworkInterceptor {
         const data = await response.json();
         console.log(`[parse-results] Intercepted API response: ${url.slice(0, 120)}`);
         responses.push({ url, data });
+        if (isAirBounds) resolveDataReady();
       } catch {
         // Not JSON or failed to parse — skip
       }
     });
   };
 
-  return { responses, start };
+  return { responses, dataReady, start };
 }
 
 /** Save intercepted API responses to debug files for inspection */
