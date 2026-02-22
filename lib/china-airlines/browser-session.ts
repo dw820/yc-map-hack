@@ -2,12 +2,14 @@ import Browserbase from "@browserbasehq/sdk";
 import { chromium, type Browser, type BrowserContext, type Page } from "playwright-core";
 import { TIMEOUTS } from "./config.js";
 import { SearchError } from "./errors.js";
+import { setCashBrowserUrl } from "../../src/utils/active-sessions.js";
 
 export interface BrowserSession {
   sessionId: string;
   browser: Browser;
   context: BrowserContext;
   page: Page;
+  debugUrl: string;
   close: () => Promise<void>;
 }
 
@@ -89,6 +91,18 @@ export class BrowserSessionManager {
       `[browser-session] Replay: https://browserbase.com/sessions/${session.id}`
     );
 
+    // Get debug URL for live viewing
+    let debugUrl = `https://browserbase.com/sessions/${session.id}`;
+    try {
+      const debugInfo = await this.bb.sessions.debug(session.id);
+      if (debugInfo.debuggerFullscreenUrl) {
+        debugUrl = debugInfo.debuggerFullscreenUrl;
+      }
+    } catch (e) {
+      console.warn(`[browser-session] Could not get debug URL: ${e}`);
+    }
+    console.log(`[browser-session] Debug URL: ${debugUrl}`);
+
     const browser = await chromium.connectOverCDP(session.connectUrl, {
       timeout: TIMEOUTS.pageLoad,
     });
@@ -105,6 +119,7 @@ export class BrowserSessionManager {
 
     const closeSession = async () => {
       console.log("[browser-session] Closing session...");
+      setCashBrowserUrl(null);
       try {
         await page.close().catch(() => {});
         await browser.close().catch(() => {});
@@ -121,9 +136,11 @@ export class BrowserSessionManager {
       browser,
       context,
       page,
+      debugUrl,
       close: closeSession,
     };
 
+    setCashBrowserUrl(debugUrl);
     return this.activeSession;
   }
 }

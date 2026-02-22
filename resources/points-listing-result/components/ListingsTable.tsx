@@ -68,9 +68,6 @@ export const ListingsTable: React.FC<ListingsTableProps> = ({
                 currentDirection={sortDirection}
                 onSort={toggleSort}
               />
-              <th className="px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider text-secondary">
-                Program
-              </th>
               <SortHeader
                 label="Miles"
                 field="milesAvailable"
@@ -88,16 +85,6 @@ export const ListingsTable: React.FC<ListingsTableProps> = ({
               <SortHeader
                 label="Total"
                 field="totalPrice"
-                currentField={sortField}
-                currentDirection={sortDirection}
-                onSort={toggleSort}
-              />
-              <th className="px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider text-secondary">
-                Seller
-              </th>
-              <SortHeader
-                label="Rating"
-                field="sellerRating"
                 currentField={sortField}
                 currentDirection={sortDirection}
                 onSort={toggleSort}

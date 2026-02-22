@@ -2,6 +2,7 @@ import Browserbase from "@browserbasehq/sdk";
 import { chromium, type Browser, type BrowserContext, type Page } from "playwright-core";
 import { TIMEOUTS } from "./config.js";
 import { AwardSearchError } from "./errors.js";
+import { setAwardBrowserUrl } from "../../src/utils/active-sessions.js";
 
 export interface BrowserSession {
   sessionId: string;
@@ -124,6 +125,7 @@ export class AwardBrowserSessionManager {
 
     const disconnectSession = async () => {
       console.log("[award-session] Disconnecting from session...");
+      setAwardBrowserUrl(null);
       try {
         await browser.close().catch(() => {});
         // No page.close() — keep pages alive in Browserbase
@@ -143,6 +145,7 @@ export class AwardBrowserSessionManager {
       close: disconnectSession,
     };
 
+    setAwardBrowserUrl(debugUrl);
     return this.activeSession;
   }
 
@@ -195,6 +198,7 @@ export class AwardBrowserSessionManager {
 
     const disconnectSession = async () => {
       console.log("[award-session] Disconnecting from session...");
+      setAwardBrowserUrl(null);
       try {
         await browser.close().catch(() => {});
       } finally {
@@ -212,6 +216,7 @@ export class AwardBrowserSessionManager {
       close: disconnectSession,
     };
 
+    setAwardBrowserUrl(debugUrl);
     console.log("[award-session] Reconnected successfully.");
     return this.activeSession;
   }

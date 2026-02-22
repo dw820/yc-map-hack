@@ -5,7 +5,6 @@ export type SortField =
   | "pricePerMile"
   | "milesAvailable"
   | "totalPrice"
-  | "sellerRating"
   | "airline";
 export type SortDirection = "asc" | "desc";
 
@@ -18,7 +17,7 @@ export function useListingSort(listings: PointsListing[]) {
       setSortDirection((d) => (d === "asc" ? "desc" : "asc"));
     } else {
       setSortField(field);
-      setSortDirection(field === "sellerRating" ? "desc" : "asc");
+      setSortDirection("asc");
     }
   };
 
@@ -40,10 +39,6 @@ export function useListingSort(listings: PointsListing[]) {
         case "totalPrice":
           aVal = a.totalPrice ?? Infinity;
           bVal = b.totalPrice ?? Infinity;
-          break;
-        case "sellerRating":
-          aVal = a.sellerRating ?? 0;
-          bVal = b.sellerRating ?? 0;
           break;
         case "airline":
           aVal = a.airline;

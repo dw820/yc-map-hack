@@ -1,14 +1,16 @@
 import { AppsSDKUIProvider } from "@openai/apps-sdk-ui/components/AppsSDKUIProvider";
 import {
   McpUseProvider,
+  useCallTool,
   useWidget,
   type WidgetMetadata,
 } from "mcp-use/react";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
 import "../styles.css";
 import { FlightComparisonTable } from "./components/FlightComparisonTable";
 import { FlightTableSkeleton } from "./components/FlightTableSkeleton";
+import { LiveBrowserView } from "./components/LiveBrowserView";
 import type { FlightSearchResultProps, FlightResult } from "./types";
 import { propSchema } from "./types";
 
@@ -21,24 +23,105 @@ export const widgetMetadata: WidgetMetadata = {
     prefersBorder: false,
     invoking: "Searching flights...",
     invoked: "Results loaded",
+    csp: {
+      "frame-src": ["https://*.browserbase.com"],
+    },
   },
 };
+
+interface BrowserUrls {
+  cashBrowserUrl: string | null;
+  awardBrowserUrl: string | null;
+}
 
 const FlightSearchResultWidget: React.FC = () => {
   const { props, isPending, sendFollowUpMessage } =
     useWidget<FlightSearchResultProps>();
 
+  const { callToolAsync } = useCallTool("get-search-progress");
+  const [browserUrls, setBrowserUrls] = useState<BrowserUrls>({
+    cashBrowserUrl: null,
+    awardBrowserUrl: null,
+  });
+  const pollingRef = useRef(false);
+
+  useEffect(() => {
+    if (!isPending) {
+      pollingRef.current = false;
+      setBrowserUrls({ cashBrowserUrl: null, awardBrowserUrl: null });
+      return;
+    }
+
+    if (pollingRef.current) return;
+    pollingRef.current = true;
+
+    let cancelled = false;
+    let retries = 0;
+    const maxRetries = 5;
+
+    const poll = async () => {
+      if (cancelled) return;
+
+      try {
+        const result = await callToolAsync({});
+        if (cancelled) return;
+
+        const data = result?.structuredContent as BrowserUrls | undefined;
+        if (data) {
+          setBrowserUrls(data);
+          // If we got URLs, keep polling less frequently to catch updates
+          if (data.cashBrowserUrl || data.awardBrowserUrl) {
+            return; // Got URLs, stop polling
+          }
+        }
+      } catch {
+        // Tool call failed — keep trying
+      }
+
+      retries++;
+      if (retries < maxRetries && !cancelled) {
+        setTimeout(poll, 3000);
+      }
+    };
+
+    // Initial delay before first poll
+    const timer = setTimeout(poll, 2000);
+
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
+  }, [isPending, callToolAsync]);
+
   if (isPending) {
+    const hasUrls = browserUrls.cashBrowserUrl || browserUrls.awardBrowserUrl;
+
     return (
       <McpUseProvider>
         <div className="relative bg-surface-elevated border border-default rounded-3xl">
           <div className="p-6 pb-3">
             <h5 className="text-secondary mb-1 text-sm">Flight Comparison</h5>
-            <h2 className="heading-xl mb-2">Flight Price Comparison</h2>
-            <div className="h-4 w-56 rounded-md bg-default/10 animate-pulse" />
+            <h2 className="heading-xl mb-2">
+              {hasUrls ? "Searching flights..." : "Flight Price Comparison"}
+            </h2>
+            {hasUrls && (
+              <p className="text-sm text-secondary mb-1">
+                Watch the browsers search in real time
+              </p>
+            )}
+            {!hasUrls && (
+              <div className="h-4 w-56 rounded-md bg-default/10 animate-pulse" />
+            )}
           </div>
           <div className="px-6 pb-6">
-            <FlightTableSkeleton />
+            {hasUrls ? (
+              <LiveBrowserView
+                cashUrl={browserUrls.cashBrowserUrl}
+                awardUrl={browserUrls.awardBrowserUrl}
+              />
+            ) : (
+              <FlightTableSkeleton />
+            )}
           </div>
         </div>
       </McpUseProvider>

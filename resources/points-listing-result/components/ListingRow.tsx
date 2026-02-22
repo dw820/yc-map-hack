@@ -1,6 +1,5 @@
 import React from "react";
 import type { PointsListing } from "../types";
-import { RatingBadge } from "./RatingBadge";
 
 interface ListingRowProps {
   listing: PointsListing;
@@ -19,9 +18,6 @@ export const ListingRow: React.FC<ListingRowProps> = ({
       <td className="px-3 py-3 text-sm font-medium whitespace-nowrap">
         {listing.airline}
       </td>
-      <td className="px-3 py-3 text-sm whitespace-nowrap text-secondary">
-        {listing.loyaltyProgram || "\u2014"}
-      </td>
       <td className="px-3 py-3 text-sm whitespace-nowrap">
         {formatMiles(listing.milesAvailable)}
       </td>
@@ -32,12 +28,6 @@ export const ListingRow: React.FC<ListingRowProps> = ({
         {listing.totalPrice != null
           ? formatCurrency(listing.totalPrice)
           : "\u2014"}
-      </td>
-      <td className="px-3 py-3 text-sm whitespace-nowrap text-secondary">
-        {listing.sellerDisplayName || "\u2014"}
-      </td>
-      <td className="px-3 py-3 whitespace-nowrap">
-        <RatingBadge rating={listing.sellerRating} />
       </td>
     </tr>
   );

@@ -5,6 +5,7 @@ import { createProvider, createPointsListingProvider, createAwardProvider } from
 import { UnifiedFlightSearchService } from "./src/services/unified-flight-search-service.js";
 import { PointsListingService } from "./src/services/points-listing-service.js";
 import { loginDynastyFlyer } from "./lib/china-airlines-award/index.js";
+import { getActiveSessions } from "./src/utils/active-sessions.js";
 import { z } from "zod";
 
 const server = new MCPServer({
@@ -182,6 +183,22 @@ server.tool(
         `Dynasty Flyer login failed: ${err instanceof Error ? err.message : "Unknown error"}`
       );
     }
+  }
+);
+
+server.tool(
+  {
+    name: "get-search-progress",
+    description:
+      "Get live browser view URLs for in-progress flight searches. Returns debug URLs for both cash and award browser sessions.",
+    schema: z.object({}),
+    annotations: {
+      readOnlyHint: true,
+    },
+  },
+  async () => {
+    const { cashBrowserUrl, awardBrowserUrl } = getActiveSessions();
+    return object({ cashBrowserUrl, awardBrowserUrl });
   }
 );
 
