@@ -2,6 +2,11 @@
 
 An MCP server that searches airline flights across cash and award (miles) pricing, calculates cents-per-point (CPP) value, and surfaces deals from the PointsBazaar P2P miles marketplace. Built with [mcp-use](https://mcp-use.com) and designed to run inside MCP clients like ChatGPT.
 
+## Deployed URLs
+
+- **MCP Server:** https://throbbing-sound-b8zey.run.mcp-use.com/mcp
+- **Inspector:** [Open Inspector](https://inspector.manufact.com/inspector?autoConnect=https%3A%2F%2Fthrobbing-sound-b8zey.run.mcp-use.com%2Fmcp)
+
 ## What It Does
 
 - **Unified flight search** — Searches China Airlines for both cash fares and Dynasty Flyer award availability in a single query

@@ -9,19 +9,19 @@
           "ranking": 1,
           "segments": [
             {
-              "flightId": "SEG-CI3-SFOTPE-2027-02-17-2340",
+              "flightId": "SEG-CI3-SFOTPE-2027-02-16-2340",
               "arrivalDaysDifference": 2
             }
           ]
         },
         "airBounds": [
           {
-            "airBoundId": "BC1-1-1I1CIZ_HBBL8DQSTXS5WPSEPY3LEF72QXBA",
+            "airBoundId": "BC1-1-1I1CIZ_S8828OGUC3PB7WU1DSEM841SXVGQ",
             "fareFamilyCode": "USWWECB",
             "isCheapestOffer": true,
             "availabilityDetails": [
               {
-                "flightId": "SEG-CI3-SFOTPE-2027-02-17-2340",
+                "flightId": "SEG-CI3-SFOTPE-2027-02-16-2340",
                 "cabin": "eco",
                 "bookingClass": "N",
                 "statusCode": "HK",
@@ -39,7 +39,7 @@
                   "ADT-1"
                 ],
                 "flightIds": [
-                  "SEG-CI3-SFOTPE-2027-02-17-2340"
+                  "SEG-CI3-SFOTPE-2027-02-16-2340"
                 ]
               }
             ],
@@ -96,7 +96,7 @@
               {
                 "serviceCode": "FBA1-C0GOC1",
                 "flightIds": [
-                  "SEG-CI3-SFOTPE-2027-02-17-2340"
+                  "SEG-CI3-SFOTPE-2027-02-16-2340"
                 ]
               }
             ],
@@ -162,11 +162,11 @@
             ]
           },
           {
-            "airBoundId": "BC1-1-1I1CIZ_3UY2ZIV5SDUAEWHI2GJDCXAG9MWQ",
+            "airBoundId": "BC1-1-1I1CIZ_F9KRJ1WXPTSFZZ4SBRJ740VH1GF0",
             "fareFamilyCode": "USWWECS",
             "availabilityDetails": [
               {
-                "flightId": "SEG-CI3-SFOTPE-2027-02-17-2340",
+                "flightId": "SEG-CI3-SFOTPE-2027-02-16-2340",
                 "cabin": "eco",
                 "bookingClass": "T",
                 "statusCode": "HK",
@@ -184,7 +184,7 @@
                   "ADT-1"
                 ],
                 "flightIds": [
-                  "SEG-CI3-SFOTPE-2027-02-17-2340"
+                  "SEG-CI3-SFOTPE-2027-02-16-2340"
                 ]
               }
             ],
@@ -241,7 +241,7 @@
               {
                 "serviceCode": "FBA1-C0GOC1",
                 "flightIds": [
-                  "SEG-CI3-SFOTPE-2027-02-17-2340"
+                  "SEG-CI3-SFOTPE-2027-02-16-2340"
                 ]
               }
             ],
@@ -307,11 +307,11 @@
             ]
           },
           {
-            "airBoundId": "BC1-1-1I1CIZ_EO9B1DLG1XLCLP0VNZCMG3T37MJH",
+            "airBoundId": "BC1-1-1I1CIZ_8OUC1SNZQQDK3F4MD7K92Q9XBOMA",
             "fareFamilyCode": "USWWECF",
             "availabilityDetails": [
               {
-                "flightId": "SEG-CI3-SFOTPE-2027-02-17-2340",
+                "flightId": "SEG-CI3-SFOTPE-2027-02-16-2340",
                 "cabin": "eco",
                 "bookingClass": "M",
                 "statusCode": "HK",
@@ -329,7 +329,7 @@
                   "ADT-1"
                 ],
                 "flightIds": [
-                  "SEG-CI3-SFOTPE-2027-02-17-2340"
+                  "SEG-CI3-SFOTPE-2027-02-16-2340"
                 ]
               }
             ],
@@ -386,7 +386,7 @@
               {
                 "serviceCode": "FBA1-C0GOC1",
                 "flightIds": [
-                  "SEG-CI3-SFOTPE-2027-02-17-2340"
+                  "SEG-CI3-SFOTPE-2027-02-16-2340"
                 ]
               }
             ],
@@ -452,11 +452,11 @@
             ]
           },
           {
-            "airBoundId": "BC1-1-1I1CIZ_SFIPL2ZT4FM71C352JNHK4GZWJC7",
+            "airBoundId": "BC1-1-1I1CIZ_UAE6DGCOI1EQPDWDP8NBR2QX21SJ",
             "fareFamilyCode": "USWWPECB",
             "availabilityDetails": [
               {
-                "flightId": "SEG-CI3-SFOTPE-2027-02-17-2340",
+                "flightId": "SEG-CI3-SFOTPE-2027-02-16-2340",
                 "cabin": "ecoPremium",
                 "bookingClass": "E",
                 "statusCode": "HK",
@@ -474,7 +474,7 @@
                   "ADT-1"
                 ],
                 "flightIds": [
-                  "SEG-CI3-SFOTPE-2027-02-17-2340"
+                  "SEG-CI3-SFOTPE-2027-02-16-2340"
                 ]
               }
             ],
@@ -531,7 +531,7 @@
               {
                 "serviceCode": "FBA2-C0FDC2",
                 "flightIds": [
-                  "SEG-CI3-SFOTPE-2027-02-17-2340"
+                  "SEG-CI3-SFOTPE-2027-02-16-2340"
                 ]
               }
             ],
@@ -597,11 +597,11 @@
             ]
           },
           {
-            "airBoundId": "BC1-1-1I1CIZ_IHVSKCQNB3XY6PBEFHNQEPQPFP2G",
+            "airBoundId": "BC1-1-1I1CIZ_9H4ES9OVGYA1URX2UQTS1RM7XGCE",
             "fareFamilyCode": "USWWPECS",
             "availabilityDetails": [
               {
-                "flightId": "SEG-CI3-SFOTPE-2027-02-17-2340",
+                "flightId": "SEG-CI3-SFOTPE-2027-02-16-2340",
                 "cabin": "ecoPremium",
                 "bookingClass": "A",
                 "statusCode": "HK",
@@ -619,7 +619,7 @@
                   "ADT-1"
                 ],
                 "flightIds": [
-                  "SEG-CI3-SFOTPE-2027-02-17-2340"
+                  "SEG-CI3-SFOTPE-2027-02-16-2340"
                 ]
               }
             ],
@@ -676,7 +676,7 @@
               {
                 "serviceCode": "FBA2-C0FDC2",
                 "flightIds": [
-                  "SEG-CI3-SFOTPE-2027-02-17-2340"
+                  "SEG-CI3-SFOTPE-2027-02-16-2340"
                 ]
               }
             ],
@@ -742,11 +742,11 @@
             ]
           },
           {
-            "airBoundId": "BC1-1-1I1CIZ_QIT7680UBDCJMKC373WNGXG353VI",
+            "airBoundId": "BC1-1-1I1CIZ_Y6PXJTUNKVQHPVCMP2QMEQBIXY8D",
             "fareFamilyCode": "USWWPECF",
             "availabilityDetails": [
               {
-                "flightId": "SEG-CI3-SFOTPE-2027-02-17-2340",
+                "flightId": "SEG-CI3-SFOTPE-2027-02-16-2340",
                 "cabin": "ecoPremium",
                 "bookingClass": "U",
                 "statusCode": "HK",
@@ -764,7 +764,7 @@
                   "ADT-1"
                 ],
                 "flightIds": [
-                  "SEG-CI3-SFOTPE-2027-02-17-2340"
+                  "SEG-CI3-SFOTPE-2027-02-16-2340"
                 ]
               }
             ],
@@ -821,7 +821,7 @@
               {
                 "serviceCode": "FBA2-C0FDC2",
                 "flightIds": [
-                  "SEG-CI3-SFOTPE-2027-02-17-2340"
+                  "SEG-CI3-SFOTPE-2027-02-16-2340"
                 ]
               }
             ],
@@ -887,11 +887,11 @@
             ]
           },
           {
-            "airBoundId": "BC1-1-1I1CIZ_C1W2AJH7JWQ18NA73P1RGGOZQ9WG",
+            "airBoundId": "BC1-1-1I1CIZ_KM13ZZ752MM4NX3DKL1RQR5V8ALJ",
             "fareFamilyCode": "USWWBZB",
             "availabilityDetails": [
               {
-                "flightId": "SEG-CI3-SFOTPE-2027-02-17-2340",
+                "flightId": "SEG-CI3-SFOTPE-2027-02-16-2340",
                 "cabin": "business",
                 "bookingClass": "D",
                 "statusCode": "HK",
@@ -909,7 +909,7 @@
                   "ADT-1"
                 ],
                 "flightIds": [
-                  "SEG-CI3-SFOTPE-2027-02-17-2340"
+                  "SEG-CI3-SFOTPE-2027-02-16-2340"
                 ]
               }
             ],
@@ -966,7 +966,7 @@
               {
                 "serviceCode": "FBA3-C0FMC3",
                 "flightIds": [
-                  "SEG-CI3-SFOTPE-2027-02-17-2340"
+                  "SEG-CI3-SFOTPE-2027-02-16-2340"
                 ]
               }
             ],
@@ -1032,11 +1032,11 @@
             ]
           },
           {
-            "airBoundId": "BC1-1-1I1CIZ_IXLIS2AQFDBKSV0XQGOPQ6FI9CMI",
+            "airBoundId": "BC1-1-1I1CIZ_OQOAKQFDCDZMJAP6NVLTCUO8CL48",
             "fareFamilyCode": "USWWBZS",
             "availabilityDetails": [
               {
-                "flightId": "SEG-CI3-SFOTPE-2027-02-17-2340",
+                "flightId": "SEG-CI3-SFOTPE-2027-02-16-2340",
                 "cabin": "business",
                 "bookingClass": "C",
                 "statusCode": "HK",
@@ -1054,7 +1054,7 @@
                   "ADT-1"
                 ],
                 "flightIds": [
-                  "SEG-CI3-SFOTPE-2027-02-17-2340"
+                  "SEG-CI3-SFOTPE-2027-02-16-2340"
                 ]
               }
             ],
@@ -1111,7 +1111,7 @@
               {
                 "serviceCode": "FBA3-C0FMC3",
                 "flightIds": [
-                  "SEG-CI3-SFOTPE-2027-02-17-2340"
+                  "SEG-CI3-SFOTPE-2027-02-16-2340"
                 ]
               }
             ],
@@ -1177,11 +1177,11 @@
             ]
           },
           {
-            "airBoundId": "BC1-1-1I1CIZ_5CN3AAL8O7BMSVWZ2MTYAU5BST1K",
+            "airBoundId": "BC1-1-1I1CIZ_ITSCW4TR93R7RN5RZX3AAZ67QMKP",
             "fareFamilyCode": "USWWBZF",
             "availabilityDetails": [
               {
-                "flightId": "SEG-CI3-SFOTPE-2027-02-17-2340",
+                "flightId": "SEG-CI3-SFOTPE-2027-02-16-2340",
                 "cabin": "business",
                 "bookingClass": "J",
                 "statusCode": "HK",
@@ -1199,7 +1199,7 @@
                   "ADT-1"
                 ],
                 "flightIds": [
-                  "SEG-CI3-SFOTPE-2027-02-17-2340"
+                  "SEG-CI3-SFOTPE-2027-02-16-2340"
                 ]
               }
             ],
@@ -1256,7 +1256,7 @@
               {
                 "serviceCode": "FBA3-C0FMC3",
                 "flightIds": [
-                  "SEG-CI3-SFOTPE-2027-02-17-2340"
+                  "SEG-CI3-SFOTPE-2027-02-16-2340"
                 ]
               }
             ],
@@ -1359,18 +1359,18 @@
       "77W": "BOEING 777-300ER"
     },
     "flight": {
-      "SEG-CI3-SFOTPE-2027-02-17-2340": {
+      "SEG-CI3-SFOTPE-2027-02-16-2340": {
         "marketingAirlineCode": "CI",
         "operatingAirlineCode": "CI",
         "marketingFlightNumber": "3",
         "departure": {
           "locationCode": "SFO",
-          "dateTime": "2027-02-17T23:40:00.000-08:00",
+          "dateTime": "2027-02-16T23:40:00.000-08:00",
           "terminal": "I"
         },
         "arrival": {
           "locationCode": "TPE",
-          "dateTime": "2027-02-19T05:45:00.000+08:00",
+          "dateTime": "2027-02-18T05:45:00.000+08:00",
           "terminal": "2"
         },
         "aircraftCode": "77W",
@@ -1421,15 +1421,15 @@
         "commercialFareFamily": "BZCLASS",
         "cabin": "business"
       },
-      "USWWECF": {
-        "hierarchy": 7000,
-        "commercialFareFamily": "ECONEW",
-        "cabin": "eco"
-      },
       "USWWPECB": {
         "hierarchy": 6000,
         "commercialFareFamily": "PREMIUMECO",
         "cabin": "ecoPremium"
+      },
+      "USWWECF": {
+        "hierarchy": 7000,
+        "commercialFareFamily": "ECONEW",
+        "cabin": "eco"
       },
       "USWWPECS": {
         "hierarchy": 5000,

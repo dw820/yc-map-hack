@@ -56,8 +56,6 @@ const FlightSearchResultWidget: React.FC = () => {
     pollingRef.current = true;
 
     let cancelled = false;
-    let retries = 0;
-    const maxRetries = 5;
 
     const poll = async () => {
       if (cancelled) return;
@@ -69,17 +67,12 @@ const FlightSearchResultWidget: React.FC = () => {
         const data = result?.structuredContent as BrowserUrls | undefined;
         if (data) {
           setBrowserUrls(data);
-          // If we got URLs, keep polling less frequently to catch updates
-          if (data.cashBrowserUrl || data.awardBrowserUrl) {
-            return; // Got URLs, stop polling
-          }
         }
       } catch {
         // Tool call failed — keep trying
       }
 
-      retries++;
-      if (retries < maxRetries && !cancelled) {
+      if (!cancelled) {
         setTimeout(poll, 3000);
       }
     };
